@@ -51,7 +51,11 @@ class ViewController: UIViewController {
     @IBAction func btnDivide(_ sender: Any) {
         if let firstNum = Int(inputNum1.text!) {
             if let secondNum = Int(inputNum2.text!) {
-                result = firstNum / secondNum
+                if secondNum != 0 {
+                    result = firstNum / secondNum
+                } else {
+                    print("Sıfıra bölünme hatası")
+                }
             }
         }
         labelResult.text = String(result)
