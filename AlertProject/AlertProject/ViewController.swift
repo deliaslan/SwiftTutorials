@@ -29,41 +29,25 @@ class ViewController: UIViewController {
          */
         
         if userNameText.text == "" {
-            let alert = UIAlertController(title: "Error!", message: "Kullanıcı Adı Griniz", preferredStyle: UIAlertController.Style.alert)
-            let btnOK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            
-            alert.addAction(btnOK)
-            self.present(alert, animated: true, completion: nil)
+            makeAlert(title: "Error!", message: "Kullanıcı Adınızı Giriniz!")
         } else if pwText.text == "" {
-            let alert = UIAlertController(title: "Error!", message: "Şifre Giriniz", preferredStyle: UIAlertController.Style.alert)
-            let btnOK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            
-            alert.addAction(btnOK)
-            self.present(alert, animated: true, completion: nil)
+            makeAlert(title: "Error!", message: "Şifrenizi giriniz!")
         } else if pw2Text.text == "" {
-            let alert = UIAlertController(title: "Error!", message: "Şifreyi doğrulayınız!", preferredStyle: UIAlertController.Style.alert)
-            let btnOK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-            
-            alert.addAction(btnOK)
-            self.present(alert, animated: true, completion: nil)
+            makeAlert(title: "Error!", message: "Şifrenizi doğrulayınız!")
         } else if pwText.text != pw2Text.text {
-            let alert = UIAlertController(title: "Error!", message: "Şifreler eşleşmemektedir. Yeniden deneyiniz.", preferredStyle: UIAlertController.Style.alert)
-            let btnOK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { UIAlertAction in
-                self.pwText.text = ""
-                self.pw2Text.text = ""
-            }
-            
-            alert.addAction(btnOK)
-            self.present(alert, animated: true, completion: nil)
+            makeAlert(title: "Error!", message: "Şifreler eşleşmiyot!")
         } else {
-            let alert = UIAlertController(title: "Success!", message: "Başarılı bir şekilde kaydoldunuz!", preferredStyle: UIAlertController.Style.alert)
-            let btnOK = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            makeAlert(title: "Success!", message: "Başarılı bir şekilde kaydoldunuz!")
             
+        }
+        
+        //aynı şeyleri her yere yazmak yerine metod/fonk. tanımlıyoruz.
+        func makeAlert(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            let btnOK = UIAlertAction(title: title, style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(btnOK)
             self.present(alert, animated: true, completion: nil)
         }
         
     }
-    
 }
-
