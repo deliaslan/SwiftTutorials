@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     var timer = Timer()
     var counter = 10
     var score = 0
+    var steveArray = [UIImageView]()
+    var hideTimer = Timer()
     // var highScore = Int(labelTimer.text!)
     
     
@@ -42,7 +44,7 @@ class ViewController: UIViewController {
         
         
         
-        //Gesture
+        //Gesture enable etme
         steve1.isUserInteractionEnabled = true
         steve2.isUserInteractionEnabled = true
         steve3.isUserInteractionEnabled = true
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
         steve8.isUserInteractionEnabled = true
         steve9.isUserInteractionEnabled = true
         
-        
+        //gesture tanımlama
         let gestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(countScore))
         let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(countScore))
         let gestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(countScore))
@@ -64,6 +66,7 @@ class ViewController: UIViewController {
         let gestureRecognizer8 = UITapGestureRecognizer(target: self, action: #selector(countScore))
         let gestureRecognizer9 = UITapGestureRecognizer(target: self, action: #selector(countScore))
         
+        //gesture ataması
         steve1.addGestureRecognizer(gestureRecognizer1)
         steve2.addGestureRecognizer(gestureRecognizer2)
         steve3.addGestureRecognizer(gestureRecognizer3)
@@ -74,15 +77,21 @@ class ViewController: UIViewController {
         steve8.addGestureRecognizer(gestureRecognizer8)
         steve9.addGestureRecognizer(gestureRecognizer9)
         
-        
-        
-        
-        
-        
+        //Array Steve
+        steveArray = [steve1,steve2,steve3,steve4,steve5,steve6,steve7,steve8,steve9]
+
         //Timer Codes
-      //  counter = 10
+        counter = 10
         labelTimer.text = "Kalan Süre: \(counter)"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTime), userInfo: nil, repeats: true)
+        
+        //Hide Timer Code
+        hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(hideSteve), userInfo: nil, repeats: true)
+        
+        
+        //hide Steve function called
+        hideSteve()
+        
         
         //En yüksek skor
         let storedHighScore = UserDefaults.standard.object(forKey: "highScore")
@@ -90,14 +99,24 @@ class ViewController: UIViewController {
         if let highScore = storedHighScore as? String {
             labelHighScore.text = "En Yüksek Skor: \(highScore)"
         }
-        
-        
-        
     }
     
    
+  
+    
+    @objc func hideSteve() {
+        for steve in steveArray {
+            steve.isHidden = true
+        }
+        
+        let randomNumber = Int(arc4random_uniform(UInt32(steveArray.count - 1)))
+        
+        steveArray[randomNumber].isHidden = false
+    }
+    
+    
     @objc func countScore(){
-        print("Tapped Steve")
+      //  print("Tapped Steve") //test code
         score = score + 1
         //Score
         labelScore.text = "Skor: \(score)"
@@ -111,6 +130,9 @@ class ViewController: UIViewController {
         
         if counter == 0 {
             timer.invalidate()
+            //steve stop
+            hideTimer.invalidate()
+            
             labelTimer.text = "Game Over"
             makeAlert(title: "Oyun Bitti!", message: "Tekrar oynamak ister misiniz?")
         }
@@ -120,8 +142,10 @@ class ViewController: UIViewController {
     //UIAlertController UIAlertAction function
     func makeAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let btnOK = UIAlertAction(title: "Oyna", style: UIAlertAction.Style.default, handler: nil )
         let btnCancel = UIAlertAction(title: "Hayır", style: UIAlertAction.Style.cancel, handler: nil)
+        let btnOK = UIAlertAction(title: "Oyna", style: UIAlertAction.Style.default) { UIAlertAction in
+            //replay function
+        }
         alert.addAction(btnOK)
         alert.addAction(btnCancel)
         self.present(alert, animated: true, completion: nil)
