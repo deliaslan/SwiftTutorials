@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var steve8: UIImageView!
     @IBOutlet weak var steve9: UIImageView!
     
+   
     
     //Defining Variables
     var timer = Timer()
@@ -37,6 +38,38 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        
+        
+        //Gesture
+        steve1.isUserInteractionEnabled = true
+        steve2.isUserInteractionEnabled = true
+        steve3.isUserInteractionEnabled = true
+        steve4.isUserInteractionEnabled = true
+        steve5.isUserInteractionEnabled = true
+        steve6.isUserInteractionEnabled = true
+        steve7.isUserInteractionEnabled = true
+        steve8.isUserInteractionEnabled = true
+        steve9.isUserInteractionEnabled = true
+        
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        
+        steve1.addGestureRecognizer(gestureRecognizer)
+//        steve2.addGestureRecognizer(gestureRecognizer)
+//        steve3.addGestureRecognizer(gestureRecognizer)
+//        steve4.addGestureRecognizer(gestureRecognizer)
+//        steve5.addGestureRecognizer(gestureRecognizer)
+//        steve6.addGestureRecognizer(gestureRecognizer)
+//        steve7.addGestureRecognizer(gestureRecognizer)
+//        steve8.addGestureRecognizer(gestureRecognizer)
+//        steve9.addGestureRecognizer(gestureRecognizer)
+        
+        
+        
+        
+        
         
         //Timer Codes
       //  counter = 10
@@ -55,6 +88,14 @@ class ViewController: UIViewController {
     }
     
    
+    @objc func countScore(){
+        print("Tapped Steve")
+        score = score + 1
+        //Score
+        labelScore.text = "Skor: \(score)"
+    }
+    
+    
     
     @objc func countTime(){
         labelTimer.text = "Kalan Süre: \(counter)"
