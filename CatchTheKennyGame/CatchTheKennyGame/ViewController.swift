@@ -54,17 +54,25 @@ class ViewController: UIViewController {
         steve9.isUserInteractionEnabled = true
         
         
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer5 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer6 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer7 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer8 = UITapGestureRecognizer(target: self, action: #selector(countScore))
+        let gestureRecognizer9 = UITapGestureRecognizer(target: self, action: #selector(countScore))
         
-        steve1.addGestureRecognizer(gestureRecognizer)
-//        steve2.addGestureRecognizer(gestureRecognizer)
-//        steve3.addGestureRecognizer(gestureRecognizer)
-//        steve4.addGestureRecognizer(gestureRecognizer)
-//        steve5.addGestureRecognizer(gestureRecognizer)
-//        steve6.addGestureRecognizer(gestureRecognizer)
-//        steve7.addGestureRecognizer(gestureRecognizer)
-//        steve8.addGestureRecognizer(gestureRecognizer)
-//        steve9.addGestureRecognizer(gestureRecognizer)
+        steve1.addGestureRecognizer(gestureRecognizer1)
+        steve2.addGestureRecognizer(gestureRecognizer2)
+        steve3.addGestureRecognizer(gestureRecognizer3)
+        steve4.addGestureRecognizer(gestureRecognizer4)
+        steve5.addGestureRecognizer(gestureRecognizer5)
+        steve6.addGestureRecognizer(gestureRecognizer6)
+        steve7.addGestureRecognizer(gestureRecognizer7)
+        steve8.addGestureRecognizer(gestureRecognizer8)
+        steve9.addGestureRecognizer(gestureRecognizer9)
         
         
         
