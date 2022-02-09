@@ -30,11 +30,13 @@ class ViewController: UIViewController {
     
     //Defining Variables
     var timer = Timer()
-    var counter = 10
+    var counter = 20
     var score = 0
     var steveArray = [UIImageView]()
     var hideTimer = Timer()
-    // var highScore = Int(labelTimer.text!)
+    var highScore = 0
+    
+    
     
     
     override func viewDidLoad() {
@@ -81,7 +83,7 @@ class ViewController: UIViewController {
         steveArray = [steve1,steve2,steve3,steve4,steve5,steve6,steve7,steve8,steve9]
 
         //Timer Codes
-        counter = 10
+        counter = 20
         labelTimer.text = "Kalan Süre: \(counter)"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countTime), userInfo: nil, repeats: true)
         
@@ -92,13 +94,19 @@ class ViewController: UIViewController {
         //hide Steve function called
         hideSteve()
         
-        
-        //En yüksek skor
+        //High Score Showed
         let storedHighScore = UserDefaults.standard.object(forKey: "highScore")
-        
-        if let highScore = storedHighScore as? String {
-            labelHighScore.text = "En Yüksek Skor: \(highScore)"
+      
+        if storedHighScore == nil {
+            highScore = 0
+            labelHighScore.text = "En yüksek skor: \(highScore)"
         }
+        
+        if let newHighScore = storedHighScore as? Int {
+            highScore = newHighScore
+            labelHighScore.text = "En yüksek skor: \(highScore)"
+        }
+       
     }
     
    
@@ -120,6 +128,11 @@ class ViewController: UIViewController {
         score = score + 1
         //Score
         labelScore.text = "Skor: \(score)"
+        
+       
+    
+       
+        
     }
     
     
@@ -133,8 +146,22 @@ class ViewController: UIViewController {
             //steve stop
             hideTimer.invalidate()
             
+            
+            for steve in steveArray {
+                steve.isUserInteractionEnabled = false
+            }
+            
+            
             labelTimer.text = "Game Over"
             makeAlert(title: "Oyun Bitti!", message: "Tekrar oynamak ister misiniz?")
+        }
+        
+        
+        //highScore
+        if self.score > self.highScore {
+            self.highScore = self.score
+            labelHighScore.text = "En Yüksek Skor: \(self.highScore)"
+            UserDefaults.standard.set(self.highScore, forKey: "highScore")
         }
     }
     
@@ -145,6 +172,21 @@ class ViewController: UIViewController {
         let btnCancel = UIAlertAction(title: "Hayır", style: UIAlertAction.Style.cancel, handler: nil)
         let btnOK = UIAlertAction(title: "Oyna", style: UIAlertAction.Style.default) { UIAlertAction in
             //replay function
+            self.score = 0
+            self.labelScore.text = "Skor: \(self.score)"
+            self.counter = 20
+            self.labelTimer.text = "Kalan Süre: \(self.counter)"
+            
+            // countDown timer
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countTime), userInfo: nil, repeats: true)
+            
+            //Hide Timer Code
+            self.hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hideSteve), userInfo: nil, repeats: true)
+            
+            
+            for steve in self.steveArray {
+                steve.isUserInteractionEnabled = true
+            }
         }
         alert.addAction(btnOK)
         alert.addAction(btnCancel)
