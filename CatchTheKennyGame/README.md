@@ -16,4 +16,6 @@
 
 ### Ekran Görüntüleri
 
-![Sınıf Diyagramı Çizimi](https://github.com/deliaslan/patikaDev/blob/main/Class_Diagram/ClassDiagramUniversity/Class%20Diagram0-University.jpg?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen1.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen2.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen3.png?raw=true)
