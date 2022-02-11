@@ -30,4 +30,8 @@ class Musician {
         instrument = instrumentInit
         type = typeInit
     }
+    
+    func sing(){
+        print("Nothing else matters!")
+    }
 }

@@ -14,3 +14,9 @@ let adem = Musician(nameInit: "Adem", ageInit: 38, instrumentInit: "Flüt", type
 print(james.instrument)
 print(adem.type)
 
+james.sing()  //james e sing metodunun yapması gerekeni yaptırıyoruz.
+
+let kirk = SuperMusician(nameInit: "Kirk", ageInit: 55, instrumentInit: "Guitar", typeInit: .LeadGuitar)
+
+kirk.sing()
+
