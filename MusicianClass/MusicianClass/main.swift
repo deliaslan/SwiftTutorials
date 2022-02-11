@@ -8,13 +8,9 @@
 import Foundation
 
 
-let james = Musician()
-let adem = Musician()
+let james = Musician(nameInit: "James", ageInit: 50, instrumentInit: "Guitar")
+let adem = Musician(nameInit: "Adem", ageInit: 38, instrumentInit: "Flüt")
 
-james.name = "James Hetfield"
-james.age = 38
-james.instrument = "Guitar"
-
-
-print(james.age)
 print(james.instrument)
+
+

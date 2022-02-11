@@ -8,13 +8,15 @@
 import Foundation
 
 class Musician {
-    var name: String = ""
-    var age: Int = 0
-    var instrument: String = ""
+    var name: String
+    var age: Int
+    var instrument: String
     
     
     //Initializer - diğer dillerde Constructor yapısına karşılık gelir.
-    init() {
-        print("Musician created")
+    init(nameInit:String, ageInit:Int, instrumentInit: String) {
+        name = nameInit
+        age = ageInit
+        instrument = instrumentInit
     }
 }
