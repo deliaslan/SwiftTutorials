@@ -19,6 +19,7 @@ Yukarıdaki özellik sayesinde app üzerinde ileri geri navigasyonları eklenmek
 
 ### Ekran Görüntüleri
 
-![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen1.png?raw=true)
-![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen2.png?raw=true)
-![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/CatchTheKennyGame/screenshots/screen3.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/LandMarkBook/screenshots/sc1.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/LandMarkBook/screenshots/sc2.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/LandMarkBook/screenshots/sc3.png?raw=true)
+![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/LandMarkBook/screenshots/sc4.png?raw=true)
