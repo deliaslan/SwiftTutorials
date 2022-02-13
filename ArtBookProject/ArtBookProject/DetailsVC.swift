@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate { //UIImagePickerControllerDelegate ->foto seçimi, UINavigationControllerDelegate
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var artistText: UITextField!
@@ -19,20 +19,17 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     var chosenPainting = ""
     var chosenPaintingId : UUID?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         if chosenPainting != "" {
             //CoreData filter
             //Test code to show ID
-//            let stringUUID = chosenPaintingId?.uuidString
-//            print(stringUUID)
+            //            let stringUUID = chosenPaintingId?.uuidString
+            //            print(stringUUID)
             
-           
             saveButton.isHidden = true // butonu saklama
-            
             
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
@@ -62,28 +59,19 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                             let image = UIImage(data: imageData)
                             imageView.image = image
                         }
-                            
-                        
                     }
                 }
             } catch {
                 print("Error filter CoreData")
             }
-            
-            
-            
-            
         } else {
             print("Ekleme sayfası geldi") //test code
             saveButton.isHidden = false
             saveButton.isEnabled = false //disable yapma
-            
-            
         }
-        
-        
+
         //Recognizers
-    
+        
         //Klavyenin kapanmasını istediğimizde yapmamız gereken
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(gestureRecognizer)
@@ -91,12 +79,10 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         //Resmin tıklanabilir olması için
         //imageView.isUserInteractionEnabled = true
         let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
-        imageTapRecognizer.numberOfTapsRequired = 2
-        view.addGestureRecognizer(imageTapRecognizer)
+     //   imageTapRecognizer.numberOfTapsRequired = 2
+        imageView.addGestureRecognizer(imageTapRecognizer)
         
     }
-    
-  
     
     @IBAction func saveButtonClicked(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -131,12 +117,12 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newData"), object: nil)
         self.navigationController?.popViewController(animated: true)
     }
-                                                      
+    
     @objc func hideKeyboard(){
         view.endEditing(true)
     }
     
-    @objc func selectImage(){
+    @objc func selectImage(imageTapRecognizer: UITapGestureRecognizer){
         
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -154,5 +140,5 @@ class DetailsVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     
-   
+    
 }
