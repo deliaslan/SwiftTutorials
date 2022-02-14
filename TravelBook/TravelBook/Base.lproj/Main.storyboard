@@ -9,6 +9,21 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="t8D-DW-L5F">
+            <objects>
+                <viewController id="wIl-kc-jpG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FoE-N3-X8a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8DQ-vb-6oi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lts-uq-2Uf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="143"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,30 +32,68 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="O4N-rT-5NS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="531"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yer Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JS7-sM-BFD">
+                                <rect key="frame" x="20" y="87" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yorum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A94-Fz-Om8">
+                                <rect key="frame" x="20" y="140" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1B-qY-uzA">
+                                <rect key="frame" x="141" y="804" width="132" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Kq6-Pc-IiQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Kaydet">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dW2-1S-aUz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O4N-rT-5NS" secondAttribute="trailing" id="LIZ-GW-Pfh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4N-rT-5NS" secondAttribute="bottom" id="MBg-dM-PY5"/>
-                            <constraint firstItem="O4N-rT-5NS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tgx-sd-VK6"/>
-                            <constraint firstItem="O4N-rT-5NS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yLp-gl-rf5"/>
+                            <constraint firstItem="O4N-rT-5NS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0jm-t3-im0"/>
+                            <constraint firstItem="JS7-sM-BFD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="2RI-JT-kaw"/>
+                            <constraint firstItem="e1B-qY-uzA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="4xz-Lu-OVm"/>
+                            <constraint firstItem="A94-Fz-Om8" firstAttribute="centerX" secondItem="O4N-rT-5NS" secondAttribute="centerX" id="7vY-qy-JXN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="e1B-qY-uzA" secondAttribute="bottom" constant="18" id="9Ch-mi-CDY"/>
+                            <constraint firstItem="O4N-rT-5NS" firstAttribute="top" secondItem="A94-Fz-Om8" secondAttribute="bottom" constant="69" id="Fjo-gV-Plp"/>
+                            <constraint firstItem="JS7-sM-BFD" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="G05-X9-zR3"/>
+                            <constraint firstItem="A94-Fz-Om8" firstAttribute="top" secondItem="JS7-sM-BFD" secondAttribute="bottom" constant="19" id="QNT-4S-ilG"/>
+                            <constraint firstItem="O4N-rT-5NS" firstAttribute="centerX" secondItem="e1B-qY-uzA" secondAttribute="centerX" id="V6o-p5-XCo"/>
+                            <constraint firstItem="JS7-sM-BFD" firstAttribute="trailing" secondItem="A94-Fz-Om8" secondAttribute="trailing" id="c00-ep-T9S"/>
+                            <constraint firstItem="JS7-sM-BFD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ctl-Nx-kAb"/>
+                            <constraint firstItem="JS7-sM-BFD" firstAttribute="leading" secondItem="A94-Fz-Om8" secondAttribute="leading" id="jxv-gC-BU4"/>
+                            <constraint firstItem="e1B-qY-uzA" firstAttribute="top" secondItem="O4N-rT-5NS" secondAttribute="bottom" constant="30" id="pib-3Z-Jv6"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentText" destination="A94-Fz-Om8" id="nTg-k0-DRn"/>
                         <outlet property="mapView" destination="O4N-rT-5NS" id="q1J-9f-xPr"/>
+                        <outlet property="nameText" destination="JS7-sM-BFD" id="r4i-uj-yDy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
