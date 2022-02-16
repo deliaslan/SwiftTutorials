@@ -22,7 +22,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        navigationController?.navigationBar.topItem?.title = "Favori Mekanlarım"
         //top bar a buton ekleme
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addButtonClicked))
         // Do any additional setup after loading the view.
