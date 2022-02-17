@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import Firebase 
 
 class ViewController: UIViewController {
 
@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Current User stays signin mode - Kullanıcı giriş yapmışsa giriş yapmış olarak kalsın
+        
+      
+        
     }
 
     @IBAction func signInClicked(_ sender: Any) {
@@ -23,7 +28,7 @@ class ViewController: UIViewController {
             
             Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { authdata, error in
                 if error != nil {
-                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
+                    self.makeAlert(title: "Sign In Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
                 } else {
                     self.performSegue(withIdentifier: "toFeedVC", sender: nil)
                 }
@@ -40,7 +45,7 @@ class ViewController: UIViewController {
         if passwordText.text != "" && emailText.text != "" {
             Auth.auth().createUser(withEmail: emailText.text!, password: passwordText.text! ) { authdata, error in
                 if error != nil {
-                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
+                    self.makeAlert(title: "Sign Up Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
                 } else {
                     self.performSegue(withIdentifier: "toFeedVC", sender: nil)
                 }
