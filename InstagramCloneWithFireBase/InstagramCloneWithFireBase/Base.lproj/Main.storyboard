@@ -15,14 +15,55 @@
                     <view key="view" contentMode="scaleToFill" id="6xo-iY-FMC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_image" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-Md-XFf">
+                                <rect key="frame" x="43" y="79" width="328" height="264"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGv-LQ-aRy">
+                                <rect key="frame" x="43" y="360" width="328" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="wGX-JJ-dhA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrD-eN-Fv5">
+                                <rect key="frame" x="140" y="420" width="134" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ueo-jc-dH5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="UPLOAD"/>
+                                <connections>
+                                    <action selector="uploadButtonClicked:" destination="Res-EN-URq" eventType="touchUpInside" id="wuq-Na-xgy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ljL-2b-TbG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lGv-LQ-aRy" firstAttribute="centerX" secondItem="lrD-eN-Fv5" secondAttribute="centerX" id="43J-cA-0Nc"/>
+                            <constraint firstItem="lrD-eN-Fv5" firstAttribute="leading" secondItem="ljL-2b-TbG" secondAttribute="leading" constant="140" id="Ako-WS-esg"/>
+                            <constraint firstItem="lrD-eN-Fv5" firstAttribute="top" secondItem="lGv-LQ-aRy" secondAttribute="bottom" constant="26" id="LgG-ue-oSs"/>
+                            <constraint firstItem="ljL-2b-TbG" firstAttribute="bottom" secondItem="lrD-eN-Fv5" secondAttribute="bottom" constant="353" id="MfR-mq-kOk"/>
+                            <constraint firstItem="v5o-Md-XFf" firstAttribute="centerX" secondItem="6xo-iY-FMC" secondAttribute="centerX" id="Zbr-Ma-hzP"/>
+                            <constraint firstItem="v5o-Md-XFf" firstAttribute="top" secondItem="ljL-2b-TbG" secondAttribute="top" constant="35" id="Zr0-O7-EUE"/>
+                            <constraint firstItem="lGv-LQ-aRy" firstAttribute="top" secondItem="v5o-Md-XFf" secondAttribute="bottom" constant="17" id="cLm-ax-0p0"/>
+                            <constraint firstItem="v5o-Md-XFf" firstAttribute="leading" secondItem="lGv-LQ-aRy" secondAttribute="leading" id="cf6-N7-syO"/>
+                            <constraint firstItem="v5o-Md-XFf" firstAttribute="trailing" secondItem="lGv-LQ-aRy" secondAttribute="trailing" id="e86-8Y-8r5"/>
+                            <constraint firstItem="v5o-Md-XFf" firstAttribute="leading" secondItem="ljL-2b-TbG" secondAttribute="leading" constant="43" id="gJa-LZ-nYL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="u.square" catalog="system" id="zvQ-rb-PGj"/>
+                    <connections>
+                        <outlet property="commentText" destination="lGv-LQ-aRy" id="xI1-yR-Ap2"/>
+                        <outlet property="imageView" destination="v5o-Md-XFf" id="0zg-Zv-emB"/>
+                        <outlet property="uploadButton" destination="lrD-eN-Fv5" id="cHq-0e-YvF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msK-ge-S9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-907" y="435"/>
+            <point key="canvasLocation" x="-907.24637681159425" y="434.59821428571428"/>
         </scene>
         <!--Settings-->
         <scene sceneID="gHb-S1-fhv">
@@ -176,6 +217,7 @@
     <resources>
         <image name="f.square" catalog="system" width="128" height="114"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="select_image" width="450" height="311"/>
         <image name="u.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

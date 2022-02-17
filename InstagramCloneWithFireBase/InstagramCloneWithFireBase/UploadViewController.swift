@@ -7,23 +7,45 @@
 
 import UIKit
 
-class UploadViewController: UIViewController {
-
+class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate { //UIImagePickerControllerDelegate, UINavigationControllerDelegate eklendi
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var commentText: UITextField!
+    @IBOutlet weak var uploadButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        imageView.isUserInteractionEnabled = true //gerek olmayabilir
+        imageView.addGestureRecognizer(gestureRecognizer)
+        
+        //Klavyenin kapanmasını istediğimizde yapmamız gereken
+        let gestureRecognizerKeyboard = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureRecognizerKeyboard)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func hideKeyboard(){
+        view.endEditing(true)
+        print("keyboard gizlendi")
     }
-    */
-
+    
+    @objc func chooseImage() {
+        
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .photoLibrary
+        pickerController.allowsEditing = true
+        present(pickerController, animated: true, completion: nil)
+        print("resime tıklandı")
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func uploadButtonClicked(_ sender: Any) {
+    }
 }
