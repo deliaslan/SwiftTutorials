@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate { //UIImagePickerControllerDelegate, UINavigationControllerDelegate eklendi
     
@@ -47,5 +48,47 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func uploadButtonClicked(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media")
+        
+        if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
+            
+            let uuid = UUID().uuidString
+            
+            let imageReference = mediaFolder.child("image\(uuid).jpg")
+            imageReference.putData(data, metadata: nil) { metaData, error in
+                if error != nil {
+                    
+                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
+                    
+                } else {
+                    
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            // print(imageUrl) //test code
+                            
+                            //DATABASE
+                            
+                            
+                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
     }
+    
+    func makeAlert(title: String?, message: String?, btnTitle: String?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: btnTitle, style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
