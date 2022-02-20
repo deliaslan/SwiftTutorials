@@ -17,6 +17,7 @@
 		72BE407B27BE41660085AFD3 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE407A27BE41660085AFD3 /* FeedViewController.swift */; };
 		72BE407D27BE418A0085AFD3 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE407C27BE418A0085AFD3 /* UploadViewController.swift */; };
 		72BE407F27BE41960085AFD3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE407E27BE41960085AFD3 /* SettingsViewController.swift */; };
+		72BE408127C21D0A0085AFD3 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BE408027C21D0A0085AFD3 /* FeedCell.swift */; };
 		77E41B8E2CC8A04CDDC231FF /* Pods_InstagramCloneWithFireBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D3E55D1EAC8A5C2D3AD137 /* Pods_InstagramCloneWithFireBase.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		72BE407A27BE41660085AFD3 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		72BE407C27BE418A0085AFD3 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		72BE407E27BE41960085AFD3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		72BE408027C21D0A0085AFD3 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		76D3E55D1EAC8A5C2D3AD137 /* Pods_InstagramCloneWithFireBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramCloneWithFireBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7B93713F5F7C2B85699385 /* Pods-InstagramCloneWithFireBase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneWithFireBase.debug.xcconfig"; path = "Target Support Files/Pods-InstagramCloneWithFireBase/Pods-InstagramCloneWithFireBase.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				7254A56027BE228C00CCE6F8 /* Info.plist */,
 				7254A56627BE25D700CCE6F8 /* GoogleService-Info.plist */,
 				72BE407A27BE41660085AFD3 /* FeedViewController.swift */,
+				72BE408027C21D0A0085AFD3 /* FeedCell.swift */,
 				72BE407C27BE418A0085AFD3 /* UploadViewController.swift */,
 				72BE407E27BE41960085AFD3 /* SettingsViewController.swift */,
 			);
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BE408127C21D0A0085AFD3 /* FeedCell.swift in Sources */,
 				7254A55727BE228B00CCE6F8 /* ViewController.swift in Sources */,
 				72BE407D27BE418A0085AFD3 /* UploadViewController.swift in Sources */,
 				7254A55327BE228B00CCE6F8 /* AppDelegate.swift in Sources */,
