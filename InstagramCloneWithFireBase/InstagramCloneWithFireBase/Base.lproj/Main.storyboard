@@ -116,6 +116,10 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-mz-4ag">
                                                     <rect key="frame" x="20" y="39" width="374" height="283"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="CIR-kX-dC5"/>
+                                                        <constraint firstAttribute="height" constant="283" id="rd5-57-KrZ"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User E-Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW1-d1-kQH">
                                                     <rect key="frame" x="20" y="12" width="374" height="21"/>
@@ -177,7 +181,7 @@
                                         <connections>
                                             <outlet property="userCommentLabel" destination="5lP-VB-87N" id="lgs-wi-HPH"/>
                                             <outlet property="userEmailLabel" destination="JW1-d1-kQH" id="8i5-DY-6NM"/>
-                                            <outlet property="userImageVİew" destination="Mwf-mz-4ag" id="qzM-3p-gfp"/>
+                                            <outlet property="userImageView" destination="Mwf-mz-4ag" id="Uqe-9y-noD"/>
                                             <outlet property="userLikeCounterLabel" destination="5p7-1B-FJw" id="5tm-dP-63s"/>
                                         </connections>
                                     </tableViewCell>

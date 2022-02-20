@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase //eklendi
+import SDWebImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -39,6 +40,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.makeAlert(title: "Error Post Feeding!", message: error?.localizedDescription, btnTitle: "OK")
             } else {
                 if snapshot?.isEmpty != true {
+                    
+                    self.userEmailArray.removeAll(keepingCapacity: false)
+                    self.userImageArray.removeAll(keepingCapacity: false)
+                    self.userLikeArray.removeAll(keepingCapacity: false)
+                    self.userCommentArray.removeAll(keepingCapacity: false)
+                    
                     for document in snapshot!.documents {
                         let documentID = document.documentID
                        
@@ -86,7 +93,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userEmailLabel.text = userEmailArray[indexPath.row]
         cell.userCommentLabel.text = userCommentArray[indexPath.row]
         cell.userLikeCounterLabel.text = String(userLikeArray[indexPath.row])
-        cell.userImageVİew.image = UIImage(named: userImageArray[indexPath.row])
+        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
         return cell
     }
     

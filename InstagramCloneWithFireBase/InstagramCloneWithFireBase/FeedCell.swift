@@ -10,7 +10,7 @@ import UIKit
 class FeedCell: UITableViewCell {
 
     @IBOutlet weak var userEmailLabel: UILabel!
-    @IBOutlet weak var userImageVİew: UIImageView!
+    @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userCommentLabel: UILabel!
     @IBOutlet weak var userLikeCounterLabel: UILabel!
     override func awakeFromNib() {

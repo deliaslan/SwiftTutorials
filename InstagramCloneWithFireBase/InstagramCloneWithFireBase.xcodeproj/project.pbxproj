@@ -73,8 +73,8 @@
 		7254A55127BE228B00CCE6F8 /* InstagramCloneWithFireBase */ = {
 			isa = PBXGroup;
 			children = (
-				7254A55227BE228B00CCE6F8 /* AppDelegate.swift */,
 				7254A55427BE228B00CCE6F8 /* SceneDelegate.swift */,
+				7254A55227BE228B00CCE6F8 /* AppDelegate.swift */,
 				7254A55627BE228B00CCE6F8 /* ViewController.swift */,
 				7254A55827BE228B00CCE6F8 /* Main.storyboard */,
 				7254A55B27BE228C00CCE6F8 /* Assets.xcassets */,
