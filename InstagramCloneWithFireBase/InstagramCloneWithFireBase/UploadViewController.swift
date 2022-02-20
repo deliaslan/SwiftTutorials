@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-import grpc
+
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate { //UIImagePickerControllerDelegate, UINavigationControllerDelegate eklendi
     
@@ -75,11 +75,16 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                             //DATABASE
                             let fireStoreDB = Firestore.firestore()
                             var fireStoreReference: DocumentReference? = nil
-                            let fireStorePost = ["imageURL": imageUrl, "postedBy" : Auth.auth().currentUser?.email, "postComment": self.commentText.text!, "date" : "date", "likes" : 0] as [String: Any]
+                            let fireStorePost = ["imageURL": imageUrl, "postedBy" : Auth.auth().currentUser?.email, "postComment": self.commentText.text!, "date" : FieldValue.serverTimestamp(), "likes" : 0] as [String: Any]
                             
                             fireStoreReference = fireStoreDB.collection("Posts").addDocument(data: fireStorePost, completion: { (error) in
                                 if error != nil {
                                     self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", btnTitle: "OK")
+                                } else {
+                                    
+                                    self.imageView.image = UIImage(named: "select_image")
+                                    self.commentText.text = ""
+                                    self.tabBarController?.selectedIndex = 0 //gitmesini istediğimiz sayfa
                                 }
                             })
                             
