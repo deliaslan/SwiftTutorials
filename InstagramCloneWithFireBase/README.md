@@ -25,7 +25,7 @@
 
 
 ### Ekran Görüntüleri
-
+![App Storyboard](https://github.com/deliaslan/SwiftTutorials/blob/main/InstagramCloneWithFireBase/screenshots/0.png?raw=true)
 ![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/InstagramCloneWithFireBase/screenshots/1.png?raw=true)
 ![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/InstagramCloneWithFireBase/screenshots/2.png?raw=true)
 ![App Screen](https://github.com/deliaslan/SwiftTutorials/blob/main/InstagramCloneWithFireBase/screenshots/3.png?raw=true)
