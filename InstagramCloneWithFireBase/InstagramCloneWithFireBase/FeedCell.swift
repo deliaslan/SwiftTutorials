@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class FeedCell: UITableViewCell {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var userCommentLabel: UILabel!
     @IBOutlet weak var userLikeCounterLabel: UILabel!
+    @IBOutlet weak var userDocumentID: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +27,15 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func userLikeButton(_ sender: Any) {
+       // print("like button clicked") // test code
+        
+        let fireStoreDatabase = Firestore.firestore()
+        
+        if let likeCount = Int(userLikeCounterLabel.text!) {
+            let likeStore = [ "likes": likeCount + 1] as [String: Any]
+            fireStoreDatabase.collection("Posts").document(userDocumentID.text!).setData(likeStore, merge: true)
+        }
+        
+        fireStoreDatabase.collection("Posts").document(userDocumentID.text!)
     }
 }

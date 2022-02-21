@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var userCommentArray = [String]()
     var userImageArray = [String]()
     var userLikeArray = [Int]()
+    var userDocumentIdArray = [String]()
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,7 +36,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getDataFromFireStore() {
         let fireStoreDataBase = Firestore.firestore()
         
-        fireStoreDataBase.collection("Posts").addSnapshotListener(includeMetadataChanges: true) { snapshot, error in
+        
+        
+        fireStoreDataBase.collection("Posts").order(by: "date", descending: true).addSnapshotListener(includeMetadataChanges: true) { snapshot, error in
             if error != nil {
                 self.makeAlert(title: "Error Post Feeding!", message: error?.localizedDescription, btnTitle: "OK")
             } else {
@@ -45,12 +48,14 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self.userImageArray.removeAll(keepingCapacity: false)
                     self.userLikeArray.removeAll(keepingCapacity: false)
                     self.userCommentArray.removeAll(keepingCapacity: false)
+                    self.userDocumentIdArray.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
+                        self.userDocumentIdArray.append(documentID)
                        
                         
-                        print(documentID) //test code
+//                        print(documentID) //test code
                         
                         if let postedBy = document.get("postedBy") as? String {
                             self.userEmailArray.append(postedBy)
@@ -90,6 +95,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedCell
+        cell.userDocumentID.text = userDocumentIdArray[indexPath.row]
         cell.userEmailLabel.text = userEmailArray[indexPath.row]
         cell.userCommentLabel.text = userCommentArray[indexPath.row]
         cell.userLikeCounterLabel.text = String(userLikeArray[indexPath.row])
