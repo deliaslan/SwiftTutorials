@@ -50,8 +50,9 @@ class ViewController: UIViewController {
                     self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", buttonTitle: "OK")
                 } else {
                     //Segue
-                    print("Wellcome")
-                    print(user?.username)
+//                    print("Wellcome")         // test code
+//                    print(user?.username)   // test code
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
         } else {

@@ -60,11 +60,62 @@
                     <connections>
                         <outlet property="passwordText" destination="zYH-SA-1w2" id="2Mt-IB-X2z"/>
                         <outlet property="userNameText" destination="SMF-CY-csl" id="9tB-rO-XaH"/>
+                        <segue destination="Tq6-JS-7Py" kind="modal" identifier="toPlacesVC" modalPresentationStyle="fullScreen" id="dvq-wt-MRJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--PlacesVC-->
+        <scene sceneID="52n-F7-DHS">
+            <objects>
+                <viewController id="gt8-ZB-dD1" customClass="PlacesVC" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sTc-Rh-sjg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BC1-RT-Xgb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jze-g5-YXD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BC1-RT-Xgb" firstAttribute="leading" secondItem="Jze-g5-YXD" secondAttribute="leading" id="jBt-yY-A34"/>
+                            <constraint firstItem="Jze-g5-YXD" firstAttribute="trailing" secondItem="BC1-RT-Xgb" secondAttribute="trailing" id="rt5-5f-SM2"/>
+                            <constraint firstItem="BC1-RT-Xgb" firstAttribute="top" secondItem="Jze-g5-YXD" secondAttribute="top" id="v9z-9z-sKk"/>
+                            <constraint firstItem="Jze-g5-YXD" firstAttribute="bottom" secondItem="BC1-RT-Xgb" secondAttribute="bottom" id="xUg-Qz-DmT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k2U-xE-XI8"/>
+                    <connections>
+                        <outlet property="tableView" destination="BC1-RT-Xgb" id="ck0-9r-xqV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QuC-RB-asI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1651" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A7B-OE-GK8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tq6-JS-7Py" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6ZP-56-TvH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="olH-33-tfQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gt8-ZB-dD1" kind="relationship" relationship="rootViewController" id="bpc-73-aOG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obo-kv-u7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="138"/>
         </scene>
     </scenes>
     <resources>
