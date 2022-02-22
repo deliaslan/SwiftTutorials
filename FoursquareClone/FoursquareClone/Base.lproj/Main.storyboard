@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign UpVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SignUpVC" customModule="FoursquareClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,6 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="uNl-Pw-022"/>
                     <connections>
                         <outlet property="passwordText" destination="zYH-SA-1w2" id="2Mt-IB-X2z"/>
                         <outlet property="userNameText" destination="SMF-CY-csl" id="9tB-rO-XaH"/>
@@ -92,6 +93,7 @@
                     <navigationItem key="navigationItem" id="k2U-xE-XI8"/>
                     <connections>
                         <outlet property="tableView" destination="BC1-RT-Xgb" id="ck0-9r-xqV"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignUpVC" modalPresentationStyle="fullScreen" id="ILv-IE-kIb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QuC-RB-asI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
