@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-            // veritabanına veri kaydetme
+        // veritabanına veri kaydetme
         //        let parseObject = PFObject(className: "Okul")
         //        parseObject["name"] = "Hoca Ahmet Yesevi Üniversitesi"
         //        parseObject["department"] = "Computer Engineering"
@@ -31,20 +31,32 @@ class ViewController: UIViewController {
         //        }
         
         //sorgu yapma
-//        let query = PFQuery(className: "Okul")
-//        query.whereKey("name", equalTo: "Sakarya Üniversitesi")
-//        query.findObjectsInBackground { objects, error in
-//            if error != nil {
-//                print(error?.localizedDescription)
-//            } else {
-//                print(objects)
-//            }
-//        }
-//
+        //        let query = PFQuery(className: "Okul")
+        //        query.whereKey("name", equalTo: "Sakarya Üniversitesi")
+        //        query.findObjectsInBackground { objects, error in
+        //            if error != nil {
+        //                print(error?.localizedDescription)
+        //            } else {
+        //                print(objects)
+        //            }
+        //        }
+        //
     }
     
     @IBAction func signInClicked(_ sender: Any) {
-        
+        if userNameText.text != "" && passwordText.text != "" {
+            PFUser.logInWithUsername(inBackground: userNameText.text!, password: passwordText.text!) { user, error in
+                if error != nil {
+                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error", buttonTitle: "OK")
+                } else {
+                    //Segue
+                    print("Wellcome")
+                    print(user?.username)
+                }
+            }
+        } else {
+            makeAlert(title: "Error!", message: "Username and Password required to login", buttonTitle: "OK")
+        }
     }
     
     @IBAction func signUpClicked(_ sender: Any) {
@@ -63,7 +75,7 @@ class ViewController: UIViewController {
                     print("User created")
                 }
             }
-           
+            
         } else {
             makeAlert(title: "Fields Error!", message: "Username and Password required!", buttonTitle: "OK")
         }
@@ -74,7 +86,7 @@ class ViewController: UIViewController {
         let okButton = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
-        }
     }
+}
 
 
