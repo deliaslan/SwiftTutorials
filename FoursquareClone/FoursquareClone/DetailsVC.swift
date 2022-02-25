@@ -81,6 +81,13 @@ class DetailsVC: UIViewController {
                     let region = MKCoordinateRegion(center: location, span: span)
                     
                     self.detailsMapView.setRegion(region, animated: true)
+                    
+                    //harita üzerine annotation ekleme 
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location
+                    annotation.title = self.detailsPlaceName.text!
+                    annotation.subtitle = self.detailsPlaceType.text!
+                    self.detailsMapView.addAnnotation(annotation)
                 }
             }
         }
