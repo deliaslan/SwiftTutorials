@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreML //eklendi
+import Vision //eklendi
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var resultLabel: UILabel!
+    
+    var chosenImage = CIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +34,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.originalImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
+        
+        if let ciImage = CIImage(image: imageView.image!) {
+            chosenImage = ciImage
+        }
+        
+        recognizeImage(image: chosenImage)
     }
     
+    
+    func recognizeImage(image: CIImage) {
+        
+        //1 request
+        //2 handler
+        if let model = try? VNCoreMLModel(for: MobileNetV2().model) {
+            let request = VNCoreMLRequest(model: model) { vnrequest, error in
+                if let results = vnrequest.results as? [VNClassificationObservation] {
+                    if results.count > 0 {
+                        let topResult = results.first
+                        DispatchQueue.main.async {
+                            let confidenceLevel = (topResult?.confidence ?? 0) * 100 //verilen değer 0-1 arasında olduğundan bu değeri % olarak göstermek için 100 ile çarpıyoruz.
+                            self.resultLabel.text = "\(confidenceLevel)% : It's a/an \(topResult?.identifier)"
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
