@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MachineLearningImageRecognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-g6-xij">
+                                <rect key="frame" x="20" y="113" width="374" height="421"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result Label:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qds-Ev-Szb">
+                                <rect key="frame" x="20" y="579" width="374" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="tI5-6b-EiW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il7-UJ-PMQ">
+                                <rect key="frame" x="163" y="661" width="88" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Omq-jm-N6J"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="gray" title="Change"/>
+                                <connections>
+                                    <action selector="changeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07f-sX-6oj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="il7-UJ-PMQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="LuV-fE-coW"/>
+                            <constraint firstItem="AuZ-g6-xij" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oys-JR-L3W"/>
+                            <constraint firstItem="Qds-Ev-Szb" firstAttribute="centerX" secondItem="il7-UJ-PMQ" secondAttribute="centerX" id="WrE-Vf-heJ"/>
+                            <constraint firstItem="AuZ-g6-xij" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="XLs-ff-qkc"/>
+                            <constraint firstItem="AuZ-g6-xij" firstAttribute="trailing" secondItem="Qds-Ev-Szb" secondAttribute="trailing" id="Y6M-VF-qIL"/>
+                            <constraint firstItem="Qds-Ev-Szb" firstAttribute="top" secondItem="AuZ-g6-xij" secondAttribute="bottom" constant="45" id="hl7-p1-NOH"/>
+                            <constraint firstItem="il7-UJ-PMQ" firstAttribute="top" secondItem="Qds-Ev-Szb" secondAttribute="bottom" constant="25" id="kci-YM-aOn"/>
+                            <constraint firstItem="AuZ-g6-xij" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="mlU-Ry-tNQ"/>
+                            <constraint firstItem="AuZ-g6-xij" firstAttribute="leading" secondItem="Qds-Ev-Szb" secondAttribute="leading" id="sTd-rV-ENK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="il7-UJ-PMQ" secondAttribute="bottom" constant="163" id="ybS-Rd-RQ5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="AuZ-g6-xij" id="7d7-PD-QdH"/>
+                        <outlet property="resultLabel" destination="Qds-Ev-Szb" id="qfH-hj-CTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
