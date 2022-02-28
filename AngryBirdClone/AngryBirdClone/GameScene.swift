@@ -108,7 +108,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate{ //SKPhysicsContactDelegate d
         
         //Label
         scoreLabel.fontName = "Helvetica"
-        scoreLabel.color = .brown
         scoreLabel.fontSize = 45
         scoreLabel.text = "0"
         
