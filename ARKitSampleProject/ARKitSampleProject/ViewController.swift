@@ -25,10 +25,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let shipScene = SCNScene(named: "art.scnassets/ship.scn")!
         
         // Set the scene to the view
-        sceneView.scene = scene
+        sceneView.scene = shipScene
+        
+        for node in sceneView.scene.rootNode.childNodes {
+            
+            let moveShip = SCNAction.moveBy(x: 1, y: 0.5, z: -0.5, duration: 1)
+            let fadeout = SCNAction.fadeOpacity(to: 0.5, duration: 1)
+            let fadeIn = SCNAction.fadeOpacity(to: 1, duration: 1)
+            
+            let sequence = SCNAction.sequence([moveShip, fadeout, fadeIn])
+            
+            let repeatForever = SCNAction.repeatForever(sequence)
+            node.runAction(repeatForever)
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
