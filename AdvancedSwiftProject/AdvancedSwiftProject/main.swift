@@ -154,4 +154,10 @@ default:
 
 
 //Breakpoint
+var x = 5
 
+print(x)
+
+x += 1  //breakpoint ile solda işaretleme yaptıktan sonra kodların  buraya kadar çalıştılmasını sağlar.
+
+print(x)
