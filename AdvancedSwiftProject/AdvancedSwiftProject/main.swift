@@ -121,3 +121,37 @@ func convertToIntegerIf (stringInput : String) -> Int {
 
 print("If: \(convertToIntegerIf(stringInput: myNumber))")
 print("Guard: \(convertToIntegerGuard(stringInput: myNumber))")
+
+
+// Switch
+
+let myNum = 11
+
+// remainder
+
+let myRemainder = myNum % 3
+
+print(myRemainder)
+
+if myRemainder == 1 {
+    print("It's 1")
+} else if myRemainder == 2 {
+    print("It's 2")
+} else if myRemainder == 3 {
+    print("It's 3")
+}
+
+switch myRemainder {
+case 1: //1...3 diyerek for daki gibi belirli bir alaığı işaret edebiliriz.
+    print("It's 1")
+case 2:
+    print("It's 2")
+case 3:
+    print("It's 3")
+default:
+    print("none of them from choices")
+}
+
+
+//Breakpoint
+
