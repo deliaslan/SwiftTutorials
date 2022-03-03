@@ -14,9 +14,9 @@ print("classJames: \(classJames.age)")
 
 //Immutable Struct
 
-var structjJames = MusicianStruct(name: "James", age: 50, instrument: "Guitar")  //let dediğimizde değiştirilemez olmaktadır.
+var structJames = MusicianStruct(name: "James", age: 50, instrument: "Guitar")  //let dediğimizde değiştirilemez olmaktadır.
 
-print("structJames: \(structjJames.age)")
+print("structJames: \(structJames.age)")
 
 classJames.age = 51
 
@@ -31,7 +31,7 @@ print("classJames: \(classJames.age)")
 
 var copyOfClassJames = classJames
 
-var copyOfStructJames = structjJames
+var copyOfStructJames = structJames
 
 print("copyOfClassJames: \(copyOfClassJames.age)")
 print("copyOfStructJames: \(copyOfStructJames.age)")
@@ -43,10 +43,20 @@ print("copyOfClassJames: \(copyOfClassJames.age)")
 print("copyOfStructJames: \(copyOfStructJames.age)")
 
 print("classJames: \(classJames.age)")
-print("structJames: \(structjJames.age)")
+print("structJames: \(structJames.age)")
 
 //Reference types -> Class
 // Copy -> Same object new reference -> 1 object + 2 references
 
 // Value Type -> Struct
 // Copy -> new object -> 2 objects
+
+
+//Function vs Mutating Function
+print("beforeClass: \(classJames.age)")
+classJames.happyBirthday()
+print("afterClass: \(classJames.age)")
+
+print("beforeStruct: \(structJames.age)")
+structJames.happyBirthday()
+print("afterStruct: \(structJames.age)")
