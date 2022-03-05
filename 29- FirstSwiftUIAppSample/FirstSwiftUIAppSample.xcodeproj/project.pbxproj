@@ -12,6 +12,7 @@
 		727116FC27D3179300473622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727116FB27D3179300473622 /* Assets.xcassets */; };
 		727116FF27D3179300473622 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727116FE27D3179300473622 /* Preview Assets.xcassets */; };
 		72B4516B27D3FAF800DBAA49 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4516A27D3FAF800DBAA49 /* SecondView.swift */; };
+		72B4516D27D4007B00DBAA49 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B4516C27D4007B00DBAA49 /* ThirdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		727116FB27D3179300473622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		727116FE27D3179300473622 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72B4516A27D3FAF800DBAA49 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		72B4516C27D4007B00DBAA49 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				727116FB27D3179300473622 /* Assets.xcassets */,
 				727116FD27D3179300473622 /* Preview Content */,
 				72B4516A27D3FAF800DBAA49 /* SecondView.swift */,
+				72B4516C27D4007B00DBAA49 /* ThirdView.swift */,
 			);
 			path = FirstSwiftUIAppSample;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B4516D27D4007B00DBAA49 /* ThirdView.swift in Sources */,
 				72B4516B27D3FAF800DBAA49 /* SecondView.swift in Sources */,
 				727116FA27D3179200473622 /* ContentView.swift in Sources */,
 				727116F827D3179200473622 /* FirstSwiftUIAppSampleApp.swift in Sources */,
