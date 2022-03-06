@@ -11,12 +11,15 @@ struct DetailsView: View {
     var chosenFavoriteElement : FavoriteElements
     var body: some View {
         VStack {
-            Text(chosenFavoriteElement.name)
-            Text(chosenFavoriteElement.description)
-            Image("sebnemferah")
+            Image(chosenFavoriteElement.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.22, alignment: .center)
+//                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.22, alignment: .center)
+            Text(chosenFavoriteElement.name)
+                .font(.largeTitle)
+                .padding(3)
+            Text(chosenFavoriteElement.description)
+                .font(.title2)
         }
     }
 }
