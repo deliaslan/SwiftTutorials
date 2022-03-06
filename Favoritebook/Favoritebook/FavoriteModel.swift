@@ -24,11 +24,13 @@ let teoman = FavoriteElements(name: "Teoman", imageName: "teoman", description: 
 let sebnemFerah = FavoriteElements(name: "Şebnem Ferah", imageName: "sebnemferah", description: "Rock Sanatçısı")
 let duman = FavoriteElements(name: "Duman", imageName: "duman", description: "Rock Müzik Grubu")
 
-let favoriteBands = FavoriteModel(title: "Favori Müzisyenlerim", elements: [teoman, sebnemFerah, duman])
+let favoriteBands = FavoriteModel(title: "FAVORİ SANATÇI VE GRUPLARIM", elements: [teoman, sebnemFerah, duman])
 
 
 let kilBill = FavoriteElements(name: "Kill Bill", imageName: "killbill", description: "Etkileyici bir film.")
 let pulpFiction = FavoriteElements(name: "Pulp Fiction", imageName: "pulpfiction", description: "Etkileyici bir film daha :)")
 let dontLookUp = FavoriteElements(name: "Don't Look Up", imageName: "dontlookup", description: "Netflix Filmi")
 
-let favoriteMovies = FavoriteModel(title: "Favori Filmlerim", elements: [kilBill, pulpFiction, dontLookUp])
+let favoriteMovies = FavoriteModel(title: "FAVORİ FİLMLERİM", elements: [kilBill, pulpFiction, dontLookUp])
+
+let myFavorites = [favoriteBands, favoriteMovies]
