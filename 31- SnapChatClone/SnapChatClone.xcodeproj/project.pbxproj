@@ -13,6 +13,7 @@
 		720B9D8127D562D30004DDEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D7F27D562D30004DDEA /* Main.storyboard */; };
 		720B9D8327D562D30004DDEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8227D562D30004DDEA /* Assets.xcassets */; };
 		720B9D8627D562D30004DDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8427D562D30004DDEA /* LaunchScreen.storyboard */; };
+		72CFBA7227D56CB9002FFE4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		720B9D8227D562D30004DDEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		720B9D8527D562D30004DDEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720B9D8727D562D30004DDEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		720B9D7827D562D30004DDEA /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
+				72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */,
 				720B9D7927D562D30004DDEA /* AppDelegate.swift */,
 				720B9D7B27D562D30004DDEA /* SceneDelegate.swift */,
 				720B9D7D27D562D30004DDEA /* ViewController.swift */,
@@ -127,6 +130,7 @@
 			files = (
 				720B9D8627D562D30004DDEA /* LaunchScreen.storyboard in Resources */,
 				720B9D8327D562D30004DDEA /* Assets.xcassets in Resources */,
+				72CFBA7227D56CB9002FFE4F /* GoogleService-Info.plist in Resources */,
 				720B9D8127D562D30004DDEA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9923AESJ53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SnapChatClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,6 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9923AESJ53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SnapChatClone/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
