@@ -15,6 +15,10 @@
 		720B9D8327D562D30004DDEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8227D562D30004DDEA /* Assets.xcassets */; };
 		720B9D8627D562D30004DDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8427D562D30004DDEA /* LaunchScreen.storyboard */; };
 		72CFBA7227D56CB9002FFE4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */; };
+		72D3887727D7C960009797C4 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887627D7C960009797C4 /* FeedVC.swift */; };
+		72D3887927D7C979009797C4 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887827D7C979009797C4 /* UploadVC.swift */; };
+		72D3887B27D7C99C009797C4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887A27D7C99C009797C4 /* SettingsVC.swift */; };
+		72D3887F27D7CC26009797C4 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887E27D7CC26009797C4 /* SnapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		720B9D8527D562D30004DDEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720B9D8727D562D30004DDEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72D3887627D7C960009797C4 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		72D3887827D7C979009797C4 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
+		72D3887A27D7C99C009797C4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		72D3887E27D7CC26009797C4 /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +82,36 @@
 		720B9D7827D562D30004DDEA /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
+				72D3887D27D7C9CD009797C4 /* Delegates */,
+				72D3887C27D7C9A8009797C4 /* ViewControllers */,
 				72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */,
-				720B9D7927D562D30004DDEA /* AppDelegate.swift */,
-				720B9D7B27D562D30004DDEA /* SceneDelegate.swift */,
-				720B9D7D27D562D30004DDEA /* SignInVC.swift */,
 				720B9D7F27D562D30004DDEA /* Main.storyboard */,
 				720B9D8227D562D30004DDEA /* Assets.xcassets */,
 				720B9D8427D562D30004DDEA /* LaunchScreen.storyboard */,
 				720B9D8727D562D30004DDEA /* Info.plist */,
 			);
 			path = SnapChatClone;
+			sourceTree = "<group>";
+		};
+		72D3887C27D7C9A8009797C4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				720B9D7D27D562D30004DDEA /* SignInVC.swift */,
+				72D3887627D7C960009797C4 /* FeedVC.swift */,
+				72D3887827D7C979009797C4 /* UploadVC.swift */,
+				72D3887A27D7C99C009797C4 /* SettingsVC.swift */,
+				72D3887E27D7CC26009797C4 /* SnapVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		72D3887D27D7C9CD009797C4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				720B9D7927D562D30004DDEA /* AppDelegate.swift */,
+				720B9D7B27D562D30004DDEA /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		A8774749C6E391FDE81919DF /* Frameworks */ = {
@@ -210,9 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D3887727D7C960009797C4 /* FeedVC.swift in Sources */,
 				720B9D7E27D562D30004DDEA /* SignInVC.swift in Sources */,
 				720B9D7A27D562D30004DDEA /* AppDelegate.swift in Sources */,
+				72D3887927D7C979009797C4 /* UploadVC.swift in Sources */,
+				72D3887F27D7CC26009797C4 /* SnapVC.swift in Sources */,
 				720B9D7C27D562D30004DDEA /* SceneDelegate.swift in Sources */,
+				72D3887B27D7C99C009797C4 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
