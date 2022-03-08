@@ -19,6 +19,17 @@ class SignInVC: UIViewController {
     }
 
     @IBAction func signInButton(_ sender: Any) {
+        if emailText.text != "" && passwordText.text != "" {
+            Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { auth, error in
+                if error != nil {
+                    self.makeAlert(title: "OK", message: error?.localizedDescription ?? "Login error!")
+                } else {
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+            }
+        } else {
+            self.makeAlert(title: "Error", message: "Email/Password ?")
+        }
     }
     
     @IBAction func signUpButton(_ sender: Any) {
