@@ -19,6 +19,7 @@
 		72D3887927D7C979009797C4 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887827D7C979009797C4 /* UploadVC.swift */; };
 		72D3887B27D7C99C009797C4 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887A27D7C99C009797C4 /* SettingsVC.swift */; };
 		72D3887F27D7CC26009797C4 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887E27D7CC26009797C4 /* SnapVC.swift */; };
+		72D3888227D93DC1009797C4 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3888127D93DC1009797C4 /* UserSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		72D3887827D7C979009797C4 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
 		72D3887A27D7C99C009797C4 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		72D3887E27D7CC26009797C4 /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
+		72D3888127D93DC1009797C4 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		720B9D7827D562D30004DDEA /* SnapChatClone */ = {
 			isa = PBXGroup;
 			children = (
+				72D3888027D93D96009797C4 /* Models */,
 				72D3887D27D7C9CD009797C4 /* Delegates */,
 				72D3887C27D7C9A8009797C4 /* ViewControllers */,
 				72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */,
@@ -112,6 +115,14 @@
 				720B9D7B27D562D30004DDEA /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		72D3888027D93D96009797C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72D3888127D93DC1009797C4 /* UserSingleton.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		A8774749C6E391FDE81919DF /* Frameworks */ = {
@@ -238,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72D3888227D93DC1009797C4 /* UserSingleton.swift in Sources */,
 				72D3887727D7C960009797C4 /* FeedVC.swift in Sources */,
 				720B9D7E27D562D30004DDEA /* SignInVC.swift in Sources */,
 				720B9D7A27D562D30004DDEA /* AppDelegate.swift in Sources */,
