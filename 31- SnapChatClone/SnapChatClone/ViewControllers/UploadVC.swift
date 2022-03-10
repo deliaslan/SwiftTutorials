@@ -34,6 +34,8 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
     
     @IBAction func uploadClicked(_ sender: Any) {
         
+        //Storage
+        
         let storage = Storage.storage()
         let storageReference = storage.reference()
         
@@ -51,17 +53,47 @@ class UploadVC: UIViewController, UIImagePickerControllerDelegate & UINavigation
                         if error == nil {
                             
                             let imageUrl = url?.absoluteString
+                            
+                            //FireStore
                             let fireStore = Firestore.firestore()
-                            
-                            let snapDictionary = ["imagUrl" : imageUrl!, "snapOwner": UserSingleton.sharedUserInfo.username, "date": FieldValue.serverTimestamp()] as [String : Any]
-                            
-                            
-                            fireStore.collection("Snaps").addDocument(data: snapDictionary) { error in
+                            //önceden aynı kullanıcının kaydettiği bir resim varmı onu kontol ediyoruz.
+                            fireStore.collection("Snaps").whereField("snapOwner", isEqualTo: UserSingleton.sharedUserInfo.username).getDocuments { (snapshot, error) in
                                 if error != nil {
                                     self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
                                 } else {
-                                    self.tabBarController?.selectedIndex = 0
-                                    self.uploadImageView.image = UIImage(named: "tapToSelect.png")
+                                    if snapshot?.isEmpty == false && snapshot != nil {
+                                        for document in snapshot!.documents {
+                                            
+                                            let documentId = document.documentID
+                                            if var imageUrlArray = document.get("imageUrlArray") as? [String] {
+                                                imageUrlArray.append(imageUrl!)
+                                                print("brekpoınt 2: \(documentId)")
+                                                let additionalDictionary = ["imageUrlArray" : imageUrlArray] as [String : Any]
+                                            
+                                                fireStore.collection("Snaps").document(documentId).setData(additionalDictionary, merge: true) { (error) in
+                                                    if error == nil {
+                                                        self.tabBarController?.selectedIndex = 0
+                                                        self.uploadImageView.image = UIImage(named: "tapToSelect.png")
+                                                    }
+                                                }
+                                            } else {
+                                                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Diziye resimi eklemedi")
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        
+                                        let snapDictionary = ["imageUrlArray" : [imageUrl!], "snapOwner": UserSingleton.sharedUserInfo.username, "date": FieldValue.serverTimestamp()] as [String : Any]
+                                        
+                                        fireStore.collection("Snaps").addDocument(data: snapDictionary) { error in
+                                            if error != nil {
+                                                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
+                                            } else {
+                                                self.tabBarController?.selectedIndex = 0
+                                                self.uploadImageView.image = UIImage(named: "tapToSelect.png")
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
