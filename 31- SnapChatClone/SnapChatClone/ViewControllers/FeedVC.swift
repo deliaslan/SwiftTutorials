@@ -8,7 +8,8 @@
 import UIKit
 import Firebase //eklendi
 
-class FeedVC: UIViewController {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
 
     let fireStoreDatabase = Firestore.firestore()
     
@@ -16,6 +17,9 @@ class FeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         getUserInfo()
     }
     
@@ -44,6 +48,14 @@ class FeedVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
     
     
 }
