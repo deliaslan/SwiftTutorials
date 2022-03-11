@@ -15,6 +15,7 @@
 		720B9D8327D562D30004DDEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8227D562D30004DDEA /* Assets.xcassets */; };
 		720B9D8627D562D30004DDEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720B9D8427D562D30004DDEA /* LaunchScreen.storyboard */; };
 		725B533327DB9CF70075271F /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B533227DB9CF70075271F /* FeedCell.swift */; };
+		725B533527DBDED50075271F /* Snap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B533427DBDED50075271F /* Snap.swift */; };
 		72CFBA7227D56CB9002FFE4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */; };
 		72D3887727D7C960009797C4 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887627D7C960009797C4 /* FeedVC.swift */; };
 		72D3887927D7C979009797C4 /* UploadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D3887827D7C979009797C4 /* UploadVC.swift */; };
@@ -36,6 +37,7 @@
 		720B9D8527D562D30004DDEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720B9D8727D562D30004DDEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725B533227DB9CF70075271F /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		725B533427DBDED50075271F /* Snap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snap.swift; sourceTree = "<group>"; };
 		72CFBA7127D56CB9002FFE4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		72D3887627D7C960009797C4 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		72D3887827D7C979009797C4 /* UploadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVC.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				72D3888127D93DC1009797C4 /* UserSingleton.swift */,
+				725B533427DBDED50075271F /* Snap.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D3888227D93DC1009797C4 /* UserSingleton.swift in Sources */,
+				725B533527DBDED50075271F /* Snap.swift in Sources */,
 				72D3887727D7C960009797C4 /* FeedVC.swift in Sources */,
 				720B9D7E27D562D30004DDEA /* SignInVC.swift in Sources */,
 				720B9D7A27D562D30004DDEA /* AppDelegate.swift in Sources */,

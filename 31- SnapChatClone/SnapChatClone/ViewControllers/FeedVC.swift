@@ -7,27 +7,32 @@
 
 import UIKit
 import Firebase //eklendi
+import SDWebImage //eklendi
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-
+    
     let fireStoreDatabase = Firestore.firestore()
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let fireStroeDatabase = Firestore.firestore()
+    var snapArray = [Snap]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         getUserInfo()
+        getSnapsFromFirebase()
     }
     
-
     func getUserInfo() {
         fireStoreDatabase.collection("UserInfo").whereField("email", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { snaphot, error in
             if error != nil {
-                makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
+                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
             } else {
                 if snaphot?.isEmpty == false && snaphot != nil {
                     for document in snaphot!.documents {
@@ -37,24 +42,63 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                         }
                     }
                 }
+            }
         }
-        
     }
-  
+    
     func makeAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)
     }
-}
+    
+    
+    func getSnapsFromFirebase() {
+        fireStoreDatabase.collection("Snaps").order(by: "date", descending: true).addSnapshotListener { snapshot, error in
+            if error != nil {
+                self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error fetching datas")
+            } else {
+                if snapshot?.isEmpty == false && snapshot != nil {
+                    self.snapArray.removeAll(keepingCapacity: false)
+                    for document in snapshot!.documents {
+                        let documentId = document.documentID
+                        if let username = document.get("snapOwner") as? String {
+                            if let imageUrlArray = document.get("imageUrlArray") as? [String]{
+                                if let date = document.get("date") as? Timestamp {
+                                    
+                                    if let difference = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
+                                        if difference >= 24 {
+                                            //Delete data
+//                                            self.fireStroeDatabase.collection("Snaps").document(documentId).delete { error in
+//                                                self.makeAlert(title: "Error", message: "Deleting Error")
+//                                            }
+                                        }
+                                        
+                                        //TimeLeft -> SnapVC
+                                    }
+                                    
+                                    let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue())
+                                    self.snapArray.append(snap)
+                                }
+                            }
+                        }
+                    }
+                    self.tableView.reloadData() //tabloyu güncelle
+                }
+            }
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return snapArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
+        cell.usernameLabel.text = snapArray[indexPath.row].username
+        cell.feedImageView.sd_setImage(with: URL(string: snapArray[indexPath.row].imageUrlArray[0]))
+        return cell
     }
     
     
