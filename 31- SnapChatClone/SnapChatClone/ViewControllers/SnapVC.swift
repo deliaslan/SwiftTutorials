@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class SnapVC: UIViewController {
 
@@ -13,7 +14,7 @@ class SnapVC: UIViewController {
     
     var selectedSnap: Snap?
     var selectedTime: Int?
-    
+    var inputArray = [KingfisherSource]() //array ile slideları kingfisher kütüphanesi aracılığıyla göstereceğiz.
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +23,25 @@ class SnapVC: UIViewController {
             timeLeftLabel.text = "Time Left: \(leftTime)"
         }
         
-     
+        if let snap = selectedSnap {
+            for imageUrl in snap.imageUrlArray {
+                inputArray.append(KingfisherSource(urlString: imageUrl)!)
+            }
+            
+            let imageSlideShow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.8))
+            imageSlideShow.backgroundColor = UIColor.white
+            
+            let pageIndicator = UIPageControl()
+            pageIndicator.currentPageIndicatorTintColor = UIColor.black
+            pageIndicator.pageIndicatorTintColor = UIColor.lightGray
+            imageSlideShow.pageIndicator = pageIndicator
+            
+            imageSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFit
+            imageSlideShow.setImageInputs(inputArray)
+            self.view.addSubview(imageSlideShow)
+            
+            self.view.bringSubviewToFront(timeLeftLabel) //en öne getiriyor
+        }
         
     }
     
