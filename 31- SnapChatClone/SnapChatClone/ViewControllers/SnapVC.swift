@@ -13,17 +13,20 @@ class SnapVC: UIViewController {
     @IBOutlet weak var timeLeftLabel: UILabel!
     
     var selectedSnap: Snap?
-    var selectedTime: Int?
+    //var selectedTime: Int?
     var inputArray = [KingfisherSource]() //array ile slideları kingfisher kütüphanesi aracılığıyla göstereceğiz.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if let leftTime = selectedTime {
-            timeLeftLabel.text = "Time Left: \(leftTime)"
-        }
+//        if let leftTime = selectedTime {
+//            timeLeftLabel.text = "Time Left: \(leftTime)"
+//        }
         
         if let snap = selectedSnap {
+            
+            timeLeftLabel.text = "Time Left: \(snap.timeDifference!)"
+            
             for imageUrl in snap.imageUrlArray {
                 inputArray.append(KingfisherSource(urlString: imageUrl)!)
             }
