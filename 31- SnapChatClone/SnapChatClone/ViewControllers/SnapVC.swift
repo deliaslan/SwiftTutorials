@@ -22,6 +22,8 @@ class SnapVC: UIViewController {
             timeLeftLabel.text = "Time Left: \(leftTime)"
         }
         
+     
+        
     }
     
 

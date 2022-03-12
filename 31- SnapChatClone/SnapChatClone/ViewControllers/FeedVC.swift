@@ -72,9 +72,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                                     if let difference = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
                                         if difference >= 24 {
                                          //   Delete data
-//                                            self.fireStoreDatabase.collection("Snaps").document(documentId).delete { error in
-//                                                self.makeAlert(title: "Error", message: "Deleting Error")
-//                                            }
+                                            self.fireStoreDatabase.collection("Snaps").document(documentId).delete { error in
+                                                self.makeAlert(title: "Error", message: "Deleting Error")
+                                            }
                                         }
                                         
                                         //TimeLeft -> SnapVC
