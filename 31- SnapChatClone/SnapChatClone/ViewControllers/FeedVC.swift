@@ -75,14 +75,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
                                             self.fireStoreDatabase.collection("Snaps").document(documentId).delete { error in
                                                 self.makeAlert(title: "Error", message: "Deleting Error")
                                             }
+                                        } else {
+                                            let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue(), timeDifference: 24 - difference )
+                                            self.snapArray.append(snap)
                                         }
                                         
                                         //TimeLeft -> SnapVC
-                                        print("Difference: \(difference)") //testcode
+                                       // print("Difference: \(difference)") //testcode
                                        // self.timeLeft = 24 - difference
                                         
-                                        let snap = Snap(username: username, imageUrlArray: imageUrlArray, date: date.dateValue(), timeDifference: 24 - difference )
-                                        self.snapArray.append(snap)
+                                        
                                     }
                                     
                                     
