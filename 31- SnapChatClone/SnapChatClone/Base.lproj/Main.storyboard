@@ -146,24 +146,8 @@
                     <view key="view" contentMode="scaleToFill" id="xsG-Hp-gK1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-FK-GEx">
-                                <rect key="frame" x="132" y="324" width="150" height="53"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
-                                <connections>
-                                    <action selector="logOutClicked:" destination="tuH-jm-4Zi" eventType="touchUpInside" id="ZX8-bn-qHW"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RiA-i9-3hB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="nGG-FK-GEx" firstAttribute="leading" secondItem="RiA-i9-3hB" secondAttribute="leading" constant="132" id="Ptt-eN-vLb"/>
-                            <constraint firstItem="RiA-i9-3hB" firstAttribute="bottom" secondItem="nGG-FK-GEx" secondAttribute="bottom" constant="436" id="kwd-To-Sgy"/>
-                            <constraint firstItem="nGG-FK-GEx" firstAttribute="centerX" secondItem="xsG-Hp-gK1" secondAttribute="centerX" id="lZ3-XO-G5i"/>
-                            <constraint firstItem="nGG-FK-GEx" firstAttribute="top" secondItem="RiA-i9-3hB" secondAttribute="top" constant="280" id="qc7-lV-6PM"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="s.square.fill" catalog="system" id="pUQ-IN-8oK"/>
                     <connections>
