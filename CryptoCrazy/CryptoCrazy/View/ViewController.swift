@@ -13,12 +13,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     private var cryptoListViewModel : CryptoListViewModel!
+    var colorPaletteArray = [UIColor]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.colorPaletteArray = [
+            UIColor(displayP3Red: 0/255, green: 166/255, blue: 251/255, alpha: 1.0),
+            UIColor(displayP3Red: 5/255, green: 130/255, blue: 202/255, alpha: 1.0)
+        ]
+        
         
         getData()
     }
@@ -46,6 +54,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cryptoViewModel = self.cryptoListViewModel.cryptoAtIndex(indexPath.row)
         cell.priceTextLabel.text = cryptoViewModel.price
         cell.currencyTextLabel.text = cryptoViewModel.name
+        //renkleri direkt atamak için
+//        if indexPath.row  % 2 == 0 {
+//            cell.backgroundColor = UIColor(displayP3Red: 0/255, green: 166/255, blue: 251/255, alpha: 1.0)
+//        } else {
+//            cell.backgroundColor = UIColor(displayP3Red: 5/255, green: 130/255, blue: 202/255, alpha: 1.0)
+//        }
+        //renkleri dizi içerisinde tanımlanan şekilde almk için
+        cell.backgroundColor = colorPaletteArray[indexPath.row % 2]
         return cell
     }
     
