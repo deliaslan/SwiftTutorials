@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func getData() {
-        let url = URL(string: "https://heliotrope-pinnate-salesman.glitch.me/")!
+        let url = URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!
         WebService().downloadCurrencies(url: url) { cryptos in
             if let cryptos = cryptos {
                 self.cryptoListViewModel = CryptoListViewModel(cryptoCurrencyList: cryptos)
