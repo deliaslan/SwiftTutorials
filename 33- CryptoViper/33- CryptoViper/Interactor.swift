@@ -6,3 +6,13 @@
 //
 
 import Foundation
+//Class, protocol
+//talks to -> presenter
+
+protocol AnyInteractor {
+  
+}
+
+class CryptoInteractor : AnyInteractor {
+    
+}
