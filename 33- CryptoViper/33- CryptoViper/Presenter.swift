@@ -10,6 +10,12 @@ import Foundation
 //Class, protocol
 //talks to -> interactor, router, view
 
+enum NetworkError: Error {
+    case NetworkFailed
+    case ParsingFailed
+}
+
+
 protocol AnyPresenter {
     var router : AnyRouter? {get set}
     var interactor : AnyInteractor?  {get set}
@@ -27,7 +33,14 @@ class CryptoPresenter : AnyPresenter {
     var view: AnyView?
     
     func InteractorDidDownloadCrypto(result: Result<[Crypto], Error>) {
-        <#code#>
+        switch result {
+        case .success(let cryptos):
+            //view.update
+            print("update")
+        case .failure(let error):
+            //view.update.error
+            print("error")
+        }
     }
     
   
