@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		72E9402B27E7247D007B9B17 /* CryptoCrazySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9402A27E7247D007B9B17 /* CryptoCrazySwiftUIApp.swift */; };
-		72E9402D27E7247D007B9B17 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9402C27E7247D007B9B17 /* ContentView.swift */; };
+		72E9402D27E7247D007B9B17 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9402C27E7247D007B9B17 /* MainView.swift */; };
 		72E9402F27E7247D007B9B17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E9402E27E7247D007B9B17 /* Assets.xcassets */; };
 		72E9403227E7247D007B9B17 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72E9403127E7247D007B9B17 /* Preview Assets.xcassets */; };
+		72E9403D27E7265C007B9B17 /* CryptoCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E9403C27E7265C007B9B17 /* CryptoCurrencyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		72E9402727E7247D007B9B17 /* CryptoCrazySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoCrazySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E9402A27E7247D007B9B17 /* CryptoCrazySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCrazySwiftUIApp.swift; sourceTree = "<group>"; };
-		72E9402C27E7247D007B9B17 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72E9402C27E7247D007B9B17 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		72E9402E27E7247D007B9B17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72E9403127E7247D007B9B17 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72E9403C27E7265C007B9B17 /* CryptoCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,11 @@
 		72E9402927E7247D007B9B17 /* CryptoCrazySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				72E9403B27E725EC007B9B17 /* Service */,
+				72E9403A27E725DF007B9B17 /* View */,
+				72E9403927E725D6007B9B17 /* ViewModel */,
+				72E9403827E725CC007B9B17 /* Model */,
 				72E9402A27E7247D007B9B17 /* CryptoCrazySwiftUIApp.swift */,
-				72E9402C27E7247D007B9B17 /* ContentView.swift */,
 				72E9402E27E7247D007B9B17 /* Assets.xcassets */,
 				72E9403027E7247D007B9B17 /* Preview Content */,
 			);
@@ -65,6 +70,36 @@
 				72E9403127E7247D007B9B17 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		72E9403827E725CC007B9B17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72E9403C27E7265C007B9B17 /* CryptoCurrencyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72E9403927E725D6007B9B17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72E9403A27E725DF007B9B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72E9402C27E7247D007B9B17 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72E9403B27E725EC007B9B17 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E9402D27E7247D007B9B17 /* ContentView.swift in Sources */,
+				72E9402D27E7247D007B9B17 /* MainView.swift in Sources */,
+				72E9403D27E7265C007B9B17 /* CryptoCurrencyModel.swift in Sources */,
 				72E9402B27E7247D007B9B17 /* CryptoCrazySwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
