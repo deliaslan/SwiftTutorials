@@ -13,11 +13,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var data = Data()
+    var tracker = 0
+    
+    let urlStrings = ["https://s1.1zoom.me/big3/32/Germany_Houses_Quedlinburg_Street_Street_lights_610313_3840x2560.jpg", "https://s1.1zoom.me/big3/55/England_Castles_Panorama_Stokesay_Castle_Made_of_610726_5120x2384.jpg"]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        data = try! Data(contentsOf: URL(string: urlStrings[0])!)
+        imageView.image = UIImage(data: data)
+        
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.camera, target: self, action: #selector(changeImage))
+    }
+    
+    @objc func changeImage() {
+        if tracker == 0 {
+            tracker += 1
+        } else {
+            tracker -= 1
+        }
+        
+        data = try! Data(contentsOf: URL(string: urlStrings[tracker])!)
+        imageView.image = UIImage(data: data)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
