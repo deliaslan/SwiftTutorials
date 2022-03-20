@@ -28,7 +28,11 @@ protocol AnyPresenter {
 class CryptoPresenter : AnyPresenter {
     var router: AnyRouter?
     
-    var interactor: AnyInteractor?
+    var interactor: AnyInteractor? {
+        didSet {
+            interactor?.downloadCryptos()
+        }
+    }
     
     var view: AnyView?
     
@@ -36,9 +40,11 @@ class CryptoPresenter : AnyPresenter {
         switch result {
         case .success(let cryptos):
             //view.update
+            view?.update(with: cryptos)
             print("update")
-        case .failure(let error):
+        case .failure (_):
             //view.update.error
+            view?.update(with: "try again later...")
             print("error")
         }
     }

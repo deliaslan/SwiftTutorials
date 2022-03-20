@@ -59,7 +59,7 @@ class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UIT
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
-        messageLabel.frame = CGRect(x: view.frame.width / 2, y: view.frame.height / 2 - 25, width: 200, height: 50)
+        messageLabel.frame = CGRect(x: view.frame.width / 2 - 100, y: view.frame.height / 2 - 25, width: 200, height: 50)
     }
     
     
@@ -68,7 +68,13 @@ class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = cryptos[indexPath.row].currency
+        content.secondaryText = cryptos[indexPath.row].price
+        cell.contentConfiguration = content
+        cell.backgroundColor = .yellow
+        return cell
     }
     
     
@@ -82,7 +88,12 @@ class CryptoViewController : UIViewController, AnyView, UITableViewDelegate, UIT
     }
     
     func update(with error: String) {
-        
+        DispatchQueue.main.async {
+            self.cryptos = []
+            self.tableView.isHidden = true
+            self.messageLabel.text = error
+            self.messageLabel.isHidden = false
+        }
     }
     
 }
