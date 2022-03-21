@@ -24,13 +24,20 @@ struct MainView: View {
                         .foregroundColor(.black)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(crypto.price)
-                        .foregroundColor(.red)
+                        .foregroundColor(.pink)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }.navigationTitle("Crypto Crazy")
-        }.onAppear{
-            cryptoListViewModel.downloadCryptos(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
+        }.task {
+            await cryptoListViewModel.downloadCryptoAsync(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
         }
+        
+        /*
+        .onAppear{
+            
+            cryptoListViewModel.downloadCryptos(url: URL(string: "https://raw.githubusercontent.com/atilsamancioglu/K21-JSONDataSet/master/crypto.json")!)
+            
+        }  */
     }
 }
 

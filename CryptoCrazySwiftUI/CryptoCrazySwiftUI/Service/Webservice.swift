@@ -7,6 +7,20 @@
 
 import Foundation
 class Webservice {
+    
+    //IOS 15 destekliyor await
+    func downloadCurrenciesAsyınc(url: URL) async throws-> [CryptoCurrencyModel] {
+        
+        let (data, _) = try await URLSession.shared.data(from: url) // _ -> response
+        
+        let currencies = try? JSONDecoder().decode([CryptoCurrencyModel].self, from: data)
+        
+        return currencies ?? []
+        
+    }
+    
+    
+    /*
     func downloadCurrencies(url: URL, completion: @escaping (Result<[CryptoCurrencyModel]?,DownloaderError>) -> Void){
         
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -26,7 +40,7 @@ class Webservice {
             completion(.success(currencies))
         }.resume()
         
-    }
+    }*/
 }
 
 enum DownloaderError : Error {
