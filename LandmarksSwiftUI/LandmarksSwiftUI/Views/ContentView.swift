@@ -35,7 +35,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(ModelData())
+        ForEach(["iPhone 12 Pro", "iPhone SE (3rd generation)"], id: \.self) { deviceName in
+            ContentView()
+                .environmentObject(ModelData())
+                .previewDevice(PreviewDevice(rawValue: deviceName))
+                .previewDisplayName(deviceName)
+        }
     }
 }
