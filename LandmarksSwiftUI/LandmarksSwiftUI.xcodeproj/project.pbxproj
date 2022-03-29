@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7273DE3B27F22C3F004D0D51 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273DE3A27F22C3F004D0D51 /* FavoriteButton.swift */; };
 		7273DE3E27F2385A004D0D51 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273DE3D27F2385A004D0D51 /* HexagonParameters.swift */; };
+		7273DE4027F23A05004D0D51 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7273DE3F27F23A05004D0D51 /* BadgeBackground.swift */; };
 		72F7076327F0F043005B016C /* LandmarksSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7076227F0F043005B016C /* LandmarksSwiftUIApp.swift */; };
 		72F7076527F0F043005B016C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7076427F0F043005B016C /* ContentView.swift */; };
 		72F7076727F0F044005B016C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F7076627F0F044005B016C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		7273DE3A27F22C3F004D0D51 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		7273DE3D27F2385A004D0D51 /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
+		7273DE3F27F23A05004D0D51 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
 		72F7075F27F0F043005B016C /* LandmarksSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandmarksSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F7076227F0F043005B016C /* LandmarksSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksSwiftUIApp.swift; sourceTree = "<group>"; };
 		72F7076427F0F043005B016C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		72F7077A27F1072B005B016C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7273DE3F27F23A05004D0D51 /* BadgeBackground.swift */,
 				72F7076427F0F043005B016C /* ContentView.swift */,
 				72F7077027F0F6BC005B016C /* CircleImage.swift */,
 				72F7077227F0F7A2005B016C /* MapView.swift */,
@@ -207,6 +210,7 @@
 				7273DE3E27F2385A004D0D51 /* HexagonParameters.swift in Sources */,
 				72F7078027F10F6A005B016C /* LandmarkList.swift in Sources */,
 				72F7078227F110E4005B016C /* LandmarkDetail.swift in Sources */,
+				7273DE4027F23A05004D0D51 /* BadgeBackground.swift in Sources */,
 				72F7076327F0F043005B016C /* LandmarksSwiftUIApp.swift in Sources */,
 				72F7077127F0F6BC005B016C /* CircleImage.swift in Sources */,
 				72F7077E27F10B80005B016C /* LandmarkRow.swift in Sources */,
