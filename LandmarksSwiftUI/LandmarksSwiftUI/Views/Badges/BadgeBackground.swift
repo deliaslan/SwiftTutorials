@@ -57,7 +57,7 @@ struct BadgeBackground: View {
 
 struct BadgeBackground_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 12 Pro", "iPhone SE (3rd generation)"], id: \.self) { deviceName in
+        ForEach(["iPhone 12 Pro"], id: \.self) { deviceName in
             BadgeBackground()
                 .environmentObject(ModelData())
                 .previewDevice(PreviewDevice(rawValue: deviceName))
