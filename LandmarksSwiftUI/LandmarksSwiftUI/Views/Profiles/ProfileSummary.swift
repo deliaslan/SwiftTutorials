@@ -54,6 +54,5 @@ struct ProfileSummary: View {
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSummary(profile: Profile.default)
-            .environmentObject(ModelData())
     }
 }
