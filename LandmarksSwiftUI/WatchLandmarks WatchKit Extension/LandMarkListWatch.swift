@@ -1,13 +1,13 @@
 //
-//  LandmarkList.swift
-//  LandmarksSwiftUI
+//  LandMarkListWatch.swift
+//  WatchLandmarks WatchKit Extension
 //
-//  Created by Adem Deliaslan on 28.03.2022.
+//  Created by Adem Deliaslan on 31.03.2022.
 //
 
 import SwiftUI
 
-struct LandmarkList: View {
+struct LandmarkListWatch: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
     
@@ -38,18 +38,18 @@ struct LandmarkList: View {
                 }
             }
             .navigationTitle("Landmarks")
-            .frame(minWidth: 300)
+         
         }
     }
 }
 
-struct LandmarkList_Previews: PreviewProvider {
+struct LandmarkListWatch_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 12 Pro", "iPhone SE (3rd generation)"], id: \.self) { deviceName in
+        
             LandmarkList()
                 .environmentObject(ModelData())
-                .previewDevice(PreviewDevice(rawValue: deviceName))
-                .previewDisplayName(deviceName)
+            
         }
     }
-}
+
+
