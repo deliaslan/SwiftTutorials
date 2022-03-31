@@ -10,17 +10,18 @@ import SwiftUI
 struct FeatureCard: View {
     var landmark: LandMark
     
+    
     var body: some View {
-        landmark.featureImage?
-            .resizable()
-            .aspectRatio(3 / 2, contentMode: .fit)
-            .overlay {
-                TextOverlay(landmark: landmark)
-            }
-        
+        NavigationLink(destination: LandmarkDetail(landmark: landmark) ){ //code edit
+            landmark.featureImage?
+                .resizable()
+                .aspectRatio(3 / 2, contentMode: .fit)
+                .overlay {
+                    TextOverlay(landmark: landmark)
+                }
+        }
     }
 }
-
 
 struct TextOverlay: View {
     var landmark: LandMark
@@ -28,12 +29,13 @@ struct TextOverlay: View {
     var gradient: LinearGradient {
         .linearGradient(
             Gradient(colors: [.black.opacity(0.6), .black.opacity(0)]),
-    startPoint: .bottom,
-    endPoint: .center)
+            startPoint: .bottom,
+            endPoint: .center)
     }
     
     var body: some View {
         ZStack(alignment: .bottomLeading) {
+            
             gradient
             VStack(alignment: .leading) {
                 Text(landmark.name)
@@ -50,5 +52,6 @@ struct TextOverlay: View {
 struct FeatureCard_Previews: PreviewProvider {
     static var previews: some View {
         FeatureCard(landmark: ModelData().features[0])
+        
     }
 }

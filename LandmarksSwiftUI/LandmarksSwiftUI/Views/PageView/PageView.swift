@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PageView<Page: View>: View {
     var pages: [Page]
+
     @State private var currentPage = 1
     
     var body: some View {
@@ -18,7 +19,6 @@ struct PageView<Page: View>: View {
                 .frame(width: CGFloat(pages.count * 18))
                 .padding(.trailing)
         }
-        
     }
 }
 
