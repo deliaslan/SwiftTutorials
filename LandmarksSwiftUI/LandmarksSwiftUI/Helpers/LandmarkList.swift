@@ -11,6 +11,7 @@ struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
     @State private var filter = FilterCategory.all
+    @State private var selectedLandmark: LandMark?
     
     enum FilterCategory: String, CaseIterable, Identifiable {
         case all = "All"
@@ -33,10 +34,14 @@ struct LandmarkList: View {
         return showFavoritesOnly ? "Favorite \(title)" : title
     }
     
+    var index: Int? {
+        modelData.landmarks.firstIndex(where: { $0.id == selectedLandmark?.id })
+    }
+    
     var body: some View {
         NavigationView{
             //        List(landmarks, id: \.id) { landmark in
-            List {
+            List(selection: $selectedLandmark) {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites Only")
                         .font(.headline)
@@ -51,6 +56,7 @@ struct LandmarkList: View {
                         //            LandmarkRow(landmark: landmarks[0])
                         //            LandmarkRow(landmark: landmarks[1])
                     }
+                    .tag(landmark)
                 }
             }
             .navigationTitle(title)
@@ -79,6 +85,7 @@ struct LandmarkList: View {
             Text("Select a Landmark")
 
         }
+        .focusedValue(\.selectedLandmark, $modelData.landmarks[index ?? 0])
     }
 }
 

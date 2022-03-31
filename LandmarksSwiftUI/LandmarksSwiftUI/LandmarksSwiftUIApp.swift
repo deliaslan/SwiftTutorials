@@ -15,7 +15,7 @@ struct LandmarksSwiftUIApp: App {
             ContentView()
                 .environmentObject(ModelData())
         }
-#if os(watchOS)
+#if !os(watchOS)
         .commands {
             LandmarkCommands()
         }
