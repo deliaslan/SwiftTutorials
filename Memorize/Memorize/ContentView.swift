@@ -10,43 +10,34 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-    
-            HStack{
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(lineWidth: 3)
-                    Text("Hello World")
-                }
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(lineWidth: 3)
-                    Text("Hello World")
-                }
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(lineWidth: 3)
-                    Text("Hello World")
-                }
-                
-                ZStack {
-                    RoundedRectangle(cornerRadius: 20.0)
-                        .stroke(lineWidth: 3)
-                    Text("Hello World")
-                }
-                
-            }
-            .padding(.horizontal)
-            .foregroundColor(.red)
-            
+        
+        HStack{
+            CardView()
+            CardView()
+            CardView()
+            CardView()
+        }
+        .padding(.horizontal)
+        .foregroundColor(.red)
+        
+    }
+}
+
+//defining struct method to create card
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 20.0)
+                .stroke(lineWidth: 3)
+            Text("Hello World")
         }
     }
-    
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-        }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
     
 }
