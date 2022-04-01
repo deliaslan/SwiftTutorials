@@ -12,10 +12,10 @@ struct ContentView: View {
     var body: some View {
         
         HStack{
-            CardView(isFaceUp: true)
-            CardView(isFaceUp: false)
-            CardView(isFaceUp: true)
-            CardView(isFaceUp: false)
+            CardView(content: "🚀")
+            CardView(content: "🚁")
+            CardView(content: "🚌")
+            CardView(content: "🚙")
         }
         .padding(.horizontal)
         .foregroundColor(.red)
@@ -25,7 +25,8 @@ struct ContentView: View {
 
 //defining struct method to create card
 struct CardView: View {
-    @State var isFaceUp: Bool //value gives in using like parameters
+    @State var isFaceUp: Bool  = true//value gives in using like parameters
+    var content: String
     
     var body: some View {
         ZStack {
@@ -36,14 +37,14 @@ struct CardView: View {
                     .foregroundColor(.white)
                 shape
                     .stroke(lineWidth: 3)
-                Text("✈️").font(.largeTitle)
+                Text(content).font(.largeTitle)
             } else {
                 shape
                     .fill()
             }
         }
         .onTapGesture {
-            isFaceUp = !isFaceUp
+            isFaceUp = !isFaceUp //changing the value in memory with @State
         }
     }
 }
