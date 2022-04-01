@@ -25,11 +25,11 @@ struct ContentView: View {
 
 //defining struct method to create card
 struct CardView: View {
-    var isFaceUp: Bool //value gives in using like parameters
+    @State var isFaceUp: Bool //value gives in using like parameters
     
     var body: some View {
         ZStack {
-            var shape = RoundedRectangle(cornerRadius: 20.0)
+            let shape = RoundedRectangle(cornerRadius: 20.0)
             if isFaceUp {
                shape
                     .fill()
@@ -41,7 +41,9 @@ struct CardView: View {
                 shape
                     .fill()
             }
-           
+        }
+        .onTapGesture {
+            isFaceUp = !isFaceUp
         }
     }
 }
