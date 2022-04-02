@@ -8,18 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
+    var emojis = ["🚀","🚁","🚌","🚙","🚓","🚜","🚍","🏎","🛺","🚖","🚡","🚆","🛻","🚢","🚔","🛵","🏍","🚛","🚕","🚑","🚚","🚒","🚝","🚲"]
+    @State var emojiCount = 12
     
     var body: some View {
-        
-        HStack{
-            CardView(content: "🚀")
-            CardView(content: "🚁")
-            CardView(content: "🚌")
-            CardView(content: "🚙")
+        VStack{
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){ //adjust the elements minimum size
+                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                        CardView(content: emoji)
+                            .aspectRatio(2 / 3, contentMode: .fit)
+                    }
+                }
+            }.foregroundColor(.red)
+            Spacer()
+            HStack {
+                add
+                Spacer()
+                remove
+            }
+            .font(.largeTitle)
+            .padding(.horizontal)
         }
         .padding(.horizontal)
-        .foregroundColor(.red)
-        
+    }
+    
+    var remove: some View {
+        Button(action: {
+            if emojiCount < 24 {
+                emojiCount += 1
+            }
+        }, label: {
+            Image(systemName: "plus.circle")
+        })
+    }
+    
+    var add: some View {
+        Button(action: {
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
+        }, label: {
+            Image(systemName: "minus.circle")
+        })
     }
 }
 
@@ -32,11 +63,11 @@ struct CardView: View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20.0)
             if isFaceUp {
-               shape
+                shape
                     .fill()
                     .foregroundColor(.white)
                 shape
-                    .stroke(lineWidth: 3)
+                    .strokeBorder(lineWidth: 3) //draw the line inside of the element
                 Text(content).font(.largeTitle)
             } else {
                 shape
@@ -48,6 +79,9 @@ struct CardView: View {
         }
     }
 }
+
+
+
 
 
 struct ContentView_Previews: PreviewProvider {
