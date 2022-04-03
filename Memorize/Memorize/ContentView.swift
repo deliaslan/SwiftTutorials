@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var emojis = ["🚀","🚁","🚌","🚙","🚓","🚜","🚍","🏎","🛺","🚖","🚡","🚆","🛻","🚢","🚔","🛵","🏍","🚛","🚕","🚑","🚚","🚒","🚝","🚲"]
-    @State var emojiCount = 12
+    @State var emojiCount = 20
     
     var body: some View {
         VStack{
@@ -17,15 +17,15 @@ struct ContentView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){ //adjust the elements minimum size
                     ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
                         CardView(content: emoji)
-                            .aspectRatio(2 / 3, contentMode: .fit)
+                            .aspectRatio(3 / 4, contentMode: .fit)
                     }
                 }
             }.foregroundColor(.red)
             Spacer()
             HStack {
-                add
-                Spacer()
-                remove
+              //  add
+               // Spacer()
+              //  remove
             }
             .font(.largeTitle)
             .padding(.horizontal)
@@ -33,25 +33,25 @@ struct ContentView: View {
         .padding(.horizontal)
     }
     
-    var remove: some View {
-        Button(action: {
-            if emojiCount < 24 {
-                emojiCount += 1
-            }
-        }, label: {
-            Image(systemName: "plus.circle")
-        })
-    }
-    
-    var add: some View {
-        Button(action: {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-        }, label: {
-            Image(systemName: "minus.circle")
-        })
-    }
+//    var remove: some View {
+//        Button(action: {
+//            if emojiCount < 24 {
+//                emojiCount += 1
+//            }
+//        }, label: {
+//            Image(systemName: "plus.circle")
+//        })
+//    }
+//
+//    var add: some View {
+//        Button(action: {
+//            if emojiCount > 1 {
+//                emojiCount -= 1
+//            }
+//        }, label: {
+//            Image(systemName: "minus.circle")
+//        })
+//    }
 }
 
 //defining struct method to create card
