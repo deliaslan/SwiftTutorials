@@ -12,7 +12,7 @@ func makeCardContent(index: Int) -> String {  // this func will be unnecessary u
 }
 
 class EmojiMemoryGame {
-    private var model: MemoryGame<String> = MemoryGame(numberOfPairOfCards: 4, createCardContent: { (index: Int) -> String in
+    private var model: MemoryGame<String> = MemoryGame(numberOfPairOfCards: 4, createCardContent: { index in
         return "😀"
     })
     
