@@ -3,93 +3,59 @@
 //  Memorize
 //
 //  Created by Adem Deliaslan on 1.04.2022.
-//
+// VIEW
 
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚀","🚁","🚌","🚙","🚓","🚜","🚍","🏎","🛺","🚖","🚡","🚆","🛻","🚢","🚔","🛵","🏍","🚛","🚕","🚑","🚚","🚒","🚝","🚲"]
-    @State var emojiCount = 20
+    @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-        VStack{
+       
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){ //adjust the elements minimum size
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
-                        CardView(content: emoji)
+                    ForEach(viewModel.cards) { card in
+                        CardView(card: card)
                             .aspectRatio(3 / 4, contentMode: .fit)
+                            .onTapGesture {
+                                viewModel.choose(card)
+                            }
                     }
                 }
             }.foregroundColor(.red)
-            Spacer()
-            HStack {
-              //  add
-               // Spacer()
-              //  remove
-            }
-            .font(.largeTitle)
-            .padding(.horizontal)
-        }
-        .padding(.horizontal)
+             .padding(.horizontal)
     }
-    
-//    var remove: some View {
-//        Button(action: {
-//            if emojiCount < 24 {
-//                emojiCount += 1
-//            }
-//        }, label: {
-//            Image(systemName: "plus.circle")
-//        })
-//    }
-//
-//    var add: some View {
-//        Button(action: {
-//            if emojiCount > 1 {
-//                emojiCount -= 1
-//            }
-//        }, label: {
-//            Image(systemName: "minus.circle")
-//        })
-//    }
 }
 
 //defining struct method to create card
 struct CardView: View {
-    @State var isFaceUp: Bool  = true//value gives in using like parameters
-    var content: String
+    let card: MemoryGame<String>.Card
     
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20.0)
-            if isFaceUp {
+            if card.isFaceUp {
                 shape
                     .fill()
                     .foregroundColor(.white)
                 shape
                     .strokeBorder(lineWidth: 3) //draw the line inside of the element
-                Text(content).font(.largeTitle)
+                Text(card.content).font(.largeTitle)
             } else {
                 shape
                     .fill()
             }
-        }
-        .onTapGesture {
-            isFaceUp = !isFaceUp //changing the value in memory with @State
-        }
+        }.padding(1)
     }
 }
 
-
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        let game = EmojiMemoryGame()
         Group {
-            ContentView()
+            ContentView(viewModel: game)
         }
-        ContentView()
+        ContentView(viewModel: game)
             .preferredColorScheme(.dark)
     }
     
