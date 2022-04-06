@@ -11,19 +11,19 @@ struct ContentView: View {
     @ObservedObject var viewModel: EmojiMemoryGame
     
     var body: some View {
-       
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){ //adjust the elements minimum size
-                    ForEach(viewModel.cards) { card in
-                        CardView(card: card)
-                            .aspectRatio(3 / 4, contentMode: .fit)
-                            .onTapGesture {
-                                viewModel.choose(card)
-                            }
-                    }
+        
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))] ){ //adjust the elements minimum size
+                ForEach(viewModel.cards) { card in
+                    CardView(card: card)
+                        .aspectRatio(3 / 4, contentMode: .fit)
+                        .onTapGesture {
+                            viewModel.choose(card)
+                        }
                 }
-            }.foregroundColor(.red)
-             .padding(.horizontal)
+            }
+        }.foregroundColor(.red)
+            .padding(.horizontal)
     }
 }
 
@@ -41,7 +41,10 @@ struct CardView: View {
                 shape
                     .strokeBorder(lineWidth: 3) //draw the line inside of the element
                 Text(card.content).font(.largeTitle)
-            } else {
+            } else if card.isMatch {
+                shape.opacity(0)
+            }
+            else {
                 shape
                     .fill()
             }
