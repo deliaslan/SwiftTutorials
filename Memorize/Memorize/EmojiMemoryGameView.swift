@@ -32,23 +32,32 @@ struct CardView: View {
     let card: EmojiMemoryGame.Card //MemoryGame<String>.Card  clean code
     
     var body: some View {
-        ZStack {
-            let shape = RoundedRectangle(cornerRadius: 20.0)
-            if card.isFaceUp {
-                shape
-                    .fill()
-                    .foregroundColor(.white)
-                shape
-                    .strokeBorder(lineWidth: 3) //draw the line inside of the element
-                Text(card.content).font(.largeTitle)
-            } else if card.isMatch {
-                shape.opacity(0)
+        GeometryReader { geometry in
+            ZStack {
+                let shape = RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
+                if card.isFaceUp {
+                    shape.fill().foregroundColor(.white)
+                    shape.strokeBorder(lineWidth: DrawingConstants.lineWidth) //draw the line inside of the element
+                    Text(card.content).font(font(in: geometry.size))
+                } else if card.isMatch {
+                    shape.opacity(DrawingConstants.opacity)
+                }
+                else {
+                    shape.fill()
+                }
             }
-            else {
-                shape
-                    .fill()
-            }
-        }.padding(1)
+        }
+    }
+    
+    private func font(in size: CGSize) -> Font {
+        return Font.system(size: min(size.width, size.height) * DrawingConstants.fontScale)
+    }
+    
+    private struct DrawingConstants {
+        static let cornerRadius: CGFloat = 20
+        static let lineWidth: CGFloat = 3
+        static let fontScale: CGFloat = 0.8
+        static let opacity: CGFloat = 0
     }
 }
 
@@ -56,10 +65,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = EmojiMemoryGame()
         Group {
-            EmojiMemoryGameView(game: game)
+        //    EmojiMemoryGameView(game: game)
         }
         EmojiMemoryGameView(game: game)
             .preferredColorScheme(.dark)
     }
-    
 }

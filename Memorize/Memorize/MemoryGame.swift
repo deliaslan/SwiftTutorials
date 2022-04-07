@@ -16,7 +16,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
         set {
             cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) }
-
         }
     }
     
@@ -35,7 +34,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             }
             
         }
-        print("Cards = \(cards)")
+        //print("Cards = \(cards)")
     }
     
     
