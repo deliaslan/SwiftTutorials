@@ -16,12 +16,13 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         }
         set {
             for index in cards.indices {
-                if index != newValue {
-                    cards[index].isFaceUp = false
-                } else {
-                    cards[index].isFaceUp = true
-                }
-                
+                cards[index].isFaceUp = (index == newValue) // the same code in the below
+//                if index != newValue {
+//                    cards[index].isFaceUp = false
+//                } else {
+//                    cards[index].isFaceUp = true
+//                }
+//                
             }
         }
     }
