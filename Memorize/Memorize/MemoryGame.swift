@@ -12,17 +12,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get {
-             cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly   // below code block made an extension and use it oneAndOnly
+             cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly
         }
         set {
             for index in cards.indices {
-                cards[index].isFaceUp = (index == newValue) // the same code in the below
-//                if index != newValue {
-//                    cards[index].isFaceUp = false
-//                } else {
-//                    cards[index].isFaceUp = true
-//                }
-//                
+                cards[index].isFaceUp = (index == newValue)
             }
         }
     }
