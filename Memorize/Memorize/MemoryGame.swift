@@ -15,10 +15,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
              cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly
         }
         set {
-            cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } //the same code in the below
-//            for index in cards.indices {
-//                cards[index].isFaceUp = (index == newValue)
-//            }
+            cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) }
+
         }
     }
     
