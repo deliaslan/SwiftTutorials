@@ -12,7 +12,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get {
-             cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly
+            cards.indices.filter({ cards[$0].isFaceUp }).oneAndOnly
         }
         set {
             cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) }
@@ -49,7 +49,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     struct Card: Identifiable {
-        var isFaceUp = true
+        var isFaceUp = false
         var isMatch = false
         let content: CardContent //bu elementi biz uydurduk. İçeriğin ne olduğu bizi ilgilendirmiyor dolayısıyla resimmi yazımı o kısımla ilgilenmiyoruz.
         let id: Int
