@@ -47,15 +47,6 @@ struct EmojiMemoryGameView: View {
                     }
             }
         }
-        .onAppear {
-            game.shuffle()
-            //deal cards
-            withAnimation(.easeInOut(duration: 4)) {
-                for card in game.cards {
-                    deal(card)
-                }
-            }
-        }
         .foregroundColor(CardConstants.color)
     }
     
@@ -69,6 +60,15 @@ struct EmojiMemoryGameView: View {
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(CardConstants.color)
+        .onTapGesture {
+            game.shuffle()
+            //deal cards
+            withAnimation(.easeInOut(duration: 4)) {
+                for card in game.cards {
+                    deal(card)
+                }
+            }
+        }
         
     }
     
