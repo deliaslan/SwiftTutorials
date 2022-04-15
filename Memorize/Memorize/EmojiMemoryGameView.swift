@@ -37,19 +37,20 @@ struct EmojiMemoryGameView: View {
             } else {
                 CardView(card: card)
                     .padding(4)
-//                    .transition(AnyTransition.scale.animation(Animation.easeInOut(duration: 1)))
-                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity).animation(.easeInOut(duration: 1)))
+                //                    .transition(AnyTransition.scale.animation(Animation.easeInOut(duration: 1)))
+                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity))
                     .onTapGesture {
                         withAnimation {  //(.easeInOut(duration: 2))
                             game.choose(card)
                         }
-                       
+                        
                     }
             }
         }
         .onAppear {
+            game.shuffle()
             //deal cards
-            withAnimation {
+            withAnimation(.easeInOut(duration: 4)) {
                 for card in game.cards {
                     deal(card)
                 }
@@ -62,10 +63,13 @@ struct EmojiMemoryGameView: View {
         ZStack {
             ForEach(game.cards.filter(isUndealt)) { card in
                 CardView(card: card)
+                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .scale))
+                
             }
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(CardConstants.color)
+        
     }
     
     var shuffle: some View {
