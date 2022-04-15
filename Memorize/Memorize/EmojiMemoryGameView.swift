@@ -12,10 +12,16 @@ struct EmojiMemoryGameView: View {
     @Namespace private var dealingNamespace
     
     var body: some View {
-        VStack{
-            gameBody
+        ZStack(alignment: .bottom) {
+            VStack{
+                gameBody
+                HStack {
+                    restart
+                    Spacer()
+                    shuffle
+                }
+            }
             deckBody
-            shuffle
         }
         .padding()
     }
@@ -30,19 +36,30 @@ struct EmojiMemoryGameView: View {
         !dealt.contains(card.id)
     }
     
+    private func dealAnimation(for card: EmojiMemoryGame.Card) -> Animation {
+        var delay = 0.0
+        if let index = game.cards.firstIndex(where: { $0.id == card.id }) {
+            delay = Double(index) * (CardConstants.totalDealDuration / Double(game.cards.count))
+        }
+        return Animation.easeInOut(duration: CardConstants.dealDuration).delay(delay)
+    }
+    
+    private func zIndex(of card: EmojiMemoryGame.Card) -> Double {
+        -Double(game.cards.firstIndex(where: { $0.id == card.id }) ?? 0)
+    }
+    
     var gameBody: some View {
         AspectVGrid(items: game.cards, aspectRatio: 2/3) { card in
-            if isUndealt(card) || card.isMatch && !card.isFaceUp {
-                //Rectangle().opacity(0) //the best way is int the below
+            if isUndealt(card) || (card.isMatch && !card.isFaceUp) {
                 Color.clear
             } else {
                 CardView(card: card)
                     .matchedGeometryEffect(id: card.id, in: dealingNamespace)
                     .padding(4)
-                //                    .transition(AnyTransition.scale.animation(Animation.easeInOut(duration: 1)))
-                    .transition(AnyTransition.asymmetric(insertion: .scale, removal: .opacity))
+                    .transition(AnyTransition.asymmetric(insertion: .identity, removal: .scale))
+                    .zIndex(zIndex(of: card))
                     .onTapGesture {
-                        withAnimation {  //(.easeInOut(duration: 2))
+                        withAnimation {
                             game.choose(card)
                         }
                         
@@ -57,17 +74,17 @@ struct EmojiMemoryGameView: View {
             ForEach(game.cards.filter(isUndealt)) { card in
                 CardView(card: card)
                     .matchedGeometryEffect(id: card.id, in: dealingNamespace)
-                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .scale))
-                
+                    .transition(AnyTransition.asymmetric(insertion: .opacity, removal: .identity))
+                    .zIndex(zIndex(of: card))
             }
         }
         .frame(width: CardConstants.undealtWidth, height: CardConstants.undealtHeight)
         .foregroundColor(CardConstants.color)
         .onTapGesture {
-            game.shuffle()
             //deal cards
-            withAnimation(.easeInOut(duration: 0.7)) {
-                for card in game.cards {
+            game.shuffle()
+            for card in game.cards {
+                withAnimation(dealAnimation(for: card)) {
                     deal(card)
                 }
             }
@@ -81,6 +98,15 @@ struct EmojiMemoryGameView: View {
                 game.shuffle()
             }
             
+        }
+    }
+    
+    var restart: some View {
+        Button("Restart") {
+            withAnimation {
+                dealt = []
+                game.restart()
+            }
         }
     }
     
@@ -102,7 +128,7 @@ struct CardView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: 110-90))
+                Pie(startAngle: Angle(degrees: 0-90), endAngle: Angle(degrees: (1 - card.bonusRemaining) * 360 - 90))
                     .padding(5)
                     .opacity(0.5)
                 Text(card.content)
@@ -113,10 +139,6 @@ struct CardView: View {
             .cardify(isFaceUp: card.isFaceUp)
         }
     }
-    
-    //    private func font(in size: CGSize) -> Font {
-    //        return Font.system(size: min(size.width, size.height) * DrawingConstants.fontScale)
-    //    }
     
     private func scale(thatFits size: CGSize) -> CGFloat {
         min(size.width, size.height) / (DrawingConstants.fontSize / DrawingConstants.fontScale)
