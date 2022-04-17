@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel: ObservableObject {
+class RowViewModel: ObservableObject {
     @Published var booksList = [BookModel]()
     
     init () {
