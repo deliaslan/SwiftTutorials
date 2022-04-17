@@ -17,6 +17,7 @@
 		726C6CB4280B69EF009CD42F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6CB3280B69EF009CD42F /* UserModel.swift */; };
 		726C6CB6280B6A8F009CD42F /* BookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6CB5280B6A8F009CD42F /* BookData.swift */; };
 		726C6CBD280C11A0009CD42F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6CBC280C11A0009CD42F /* HomeViewModel.swift */; };
+		726C6CC1280C3B8D009CD42F /* FontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6CC0280C3B8D009CD42F /* FontModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,11 @@
 		726C6CB3280B69EF009CD42F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		726C6CB5280B6A8F009CD42F /* BookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookData.swift; sourceTree = "<group>"; };
 		726C6CBC280C11A0009CD42F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		726C6CBF280C2F34009CD42F /* KGMissKindergarten.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KGMissKindergarten.ttf; sourceTree = "<group>"; };
+		726C6CC0280C3B8D009CD42F /* FontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModifier.swift; sourceTree = "<group>"; };
+		726C6CC2280C4C48009CD42F /* Sailec-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Bold.ttf"; sourceTree = "<group>"; };
+		726C6CC3280C4C48009CD42F /* Sailec.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sailec.ttf; sourceTree = "<group>"; };
+		726C6CC4280C4C48009CD42F /* Sailec-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		726C6C9E280B5D08009CD42F /* Athenaeum */ = {
 			isa = PBXGroup;
 			children = (
+				726C6CBE280C2EE4009CD42F /* Font */,
 				726C6CBB280B7020009CD42F /* Data */,
 				726C6CBA280B7010009CD42F /* Helpers */,
 				726C6CB9280B6FFA009CD42F /* Model */,
@@ -113,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				726C6CAF280B639A009CD42F /* ColorExtension.swift */,
+				726C6CC0280C3B8D009CD42F /* FontModifier.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,6 +131,17 @@
 				726C6CB5280B6A8F009CD42F /* BookData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		726C6CBE280C2EE4009CD42F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				726C6CC2280C4C48009CD42F /* Sailec-Bold.ttf */,
+				726C6CC4280C4C48009CD42F /* Sailec-Medium.ttf */,
+				726C6CC3280C4C48009CD42F /* Sailec.ttf */,
+				726C6CBF280C2F34009CD42F /* KGMissKindergarten.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +216,7 @@
 			files = (
 				726C6CB2280B681C009CD42F /* BookModel.swift in Sources */,
 				726C6CB6280B6A8F009CD42F /* BookData.swift in Sources */,
+				726C6CC1280C3B8D009CD42F /* FontModifier.swift in Sources */,
 				726C6CA2280B5D08009CD42F /* ContentView.swift in Sources */,
 				726C6CBD280C11A0009CD42F /* HomeViewModel.swift in Sources */,
 				726C6CAE280B627D009CD42F /* RowView.swift in Sources */,
