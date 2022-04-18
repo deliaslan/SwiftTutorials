@@ -14,19 +14,20 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.green_color.edgesIgnoringSafeArea(.all)
-//            ScrollView {  //scroll begin
+            Color.green_bluish_color.edgesIgnoringSafeArea(.all)
+            ScrollView {  //scroll begin
                 VStack (alignment: .leading) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Hey Adem,").modifier(KGFont(type: .bold, size: 20))
-                                .foregroundColor(Color.text_color).padding(.top, 16)
+                                .foregroundColor(Color.pink_color).padding(.top, 16)
                             Text("Okuduğun kitaplar burada...").modifier(KGFont(type: .medium, size: 16))
-                                .foregroundColor(Color.text_color).padding(.top, 4)
-                        }.padding(.leading, 10)
+                                .foregroundColor(Color.pink_color).padding(.top, 4)
+                        }
+                        .padding(.leading, 10)
                         Spacer()
                     }
-                    Text("Son Eklenen Kitaplar").modifier(KGFont(type: .bold, size: 20))
+                    Text("Kitap Listesi").modifier(KGFont(type: .bold, size: 20))
                         .foregroundColor(Color.pink_color)
                         .padding(.top, 24).padding(.bottom, 8).padding(.leading, 10)
                     ScrollView {
@@ -37,7 +38,7 @@ struct ContentView: View {
                     }
                    
                 }
-//            } //Scroll end
+            } //Scroll end
         }
     }
 }
