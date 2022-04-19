@@ -8,6 +8,7 @@
 import Foundation
 
 class RowViewModel: ObservableObject {
+    
     @Published var booksList = [BookModel]()
     
     init () {

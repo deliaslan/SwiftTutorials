@@ -19,7 +19,7 @@ struct DetailsView: View {
     var body: some View {
             NavigationView {
                 ZStack {
-                    Color.white_color.edgesIgnoringSafeArea(.all)
+                    Color.green_bluish_color.edgesIgnoringSafeArea(.all)
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
                             ZStack(alignment: .top) {
@@ -27,7 +27,7 @@ struct DetailsView: View {
                                     .frame(height: 500).frame(maxWidth: .infinity)
                                 HStack {
                                     Button(action: { self.presentationMode.wrappedValue.dismiss() },
-                                           label: { Image("left 24px").resizable().frame(width: 34, height: 34) })
+                                           label: { Image("Left 24px").resizable().frame(width: 34, height: 34) })
                                     Spacer()
                                     Button(action: { viewModel.favouriteMethod() },
                                            label: { Image("Heart (filled)").resizable().frame(width: 26, height: 26) })
@@ -43,16 +43,16 @@ struct DetailsView: View {
                                 HStack(alignment: .center) {
                                     HStack(alignment: .center, spacing: 2) {
                                         Text("Yazar: \(viewModel.model.author)").modifier(KGFont(type: .regular, size: 14))
-                                            .foregroundColor(Color.white_color).padding(.top, 2)
+                                            .foregroundColor(Color.yellow_light_color).padding(.top, 2)
                                         
                                         Spacer()
                                         Text("\(viewModel.model.publishDate) | \(viewModel.model.publisher)").modifier(KGFont(type: .regular, size: 14))
-                                            .lineLimit(1).foregroundColor(Color.white_color)
+                                            .lineLimit(1).foregroundColor(Color.yellow_light_color)
                                     }
                                 }
                                 HStack {
                                     Text("Resimleyen: \(viewModel.model.illustrator)").modifier(KGFont(type: .regular, size: 14))
-                                        .lineLimit(1).foregroundColor(Color.white_color)
+                                        .lineLimit(1).foregroundColor(Color.yellow_light_color)
                                     Spacer()
                                 }
                                 Divider().padding(0)
@@ -89,9 +89,9 @@ struct DetailsView: View {
                                 }.padding(.vertical, 16)
                                 
                                 Button(action: { viewModel.adoptMethod() },
-                                       label: { Text("Adopt me").modifier(KGFont(type: .medium, size: 16)).foregroundColor(.white) })
+                                       label: { Text("Beni Okuma Listene Ekle").modifier(KGFont(type: .medium, size: 16)).foregroundColor(.white) })
                                     .frame(height: 50).frame(maxWidth: .infinity)
-                                    .background(Color.yellow_color).cornerRadius(8)
+                                    .background(Color.pink_darkest_color).cornerRadius(8)
                                     .padding(.vertical, 24)
                                 
                             }.padding(.horizontal, 16).padding(.top, 8)
@@ -126,7 +126,7 @@ struct DetailsOwnerView: View {
             Spacer()
             Button(action: { self.messageMethod() },
                    label: { Image("send").resizable().frame(width: 20, height: 20) })
-                .frame(width: 45, height: 45).background(Color.pink_color).cornerRadius(25)
+                .frame(width: 45, height: 45).background(Color.green_light_color).cornerRadius(30)
         }
     }
 }
@@ -144,8 +144,8 @@ struct DetailsInfoView: View {
             }
             Spacer()
         }
-        .padding(.vertical, 12)
-        .background(Color.yellow_color)
+        .padding(.vertical, 8)
+        .background(Color.green_light_color)
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "DDDDDD"), lineWidth: 0.25)

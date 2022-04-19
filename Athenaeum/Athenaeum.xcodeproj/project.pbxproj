@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72060B52280EAC7E001FAD94 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72060B51280EAC7E001FAD94 /* HomeView.swift */; };
 		7236D47B280DFBC0005A2FD9 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236D47A280DFBC0005A2FD9 /* DetailsViewModel.swift */; };
 		7236D47D280DFCE5005A2FD9 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236D47C280DFCE5005A2FD9 /* DetailsView.swift */; };
+		7236D47F280E14C0005A2FD9 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7236D47E280E14C0005A2FD9 /* Models.swift */; };
 		726C6CA0280B5D08009CD42F /* AthenaeumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6C9F280B5D08009CD42F /* AthenaeumApp.swift */; };
 		726C6CA2280B5D08009CD42F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726C6CA1280B5D08009CD42F /* ContentView.swift */; };
 		726C6CA4280B5D08009CD42F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 726C6CA3280B5D08009CD42F /* Assets.xcassets */; };
@@ -23,8 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72060B51280EAC7E001FAD94 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7236D47A280DFBC0005A2FD9 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		7236D47C280DFCE5005A2FD9 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		7236D47E280E14C0005A2FD9 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		726C6C9C280B5D08009CD42F /* Athenaeum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Athenaeum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		726C6C9F280B5D08009CD42F /* AthenaeumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthenaeumApp.swift; sourceTree = "<group>"; };
 		726C6CA1280B5D08009CD42F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				726C6CA1280B5D08009CD42F /* ContentView.swift */,
 				726C6CAD280B627D009CD42F /* RowView.swift */,
 				7236D47C280DFCE5005A2FD9 /* DetailsView.swift */,
+				72060B51280EAC7E001FAD94 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				726C6CAF280B639A009CD42F /* ColorExtension.swift */,
 				726C6CC0280C3B8D009CD42F /* FontModifier.swift */,
+				7236D47E280E14C0005A2FD9 /* Models.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,7 +228,9 @@
 			files = (
 				726C6CB2280B681C009CD42F /* BookModel.swift in Sources */,
 				726C6CB6280B6A8F009CD42F /* BookData.swift in Sources */,
+				72060B52280EAC7E001FAD94 /* HomeView.swift in Sources */,
 				726C6CC1280C3B8D009CD42F /* FontModifier.swift in Sources */,
+				7236D47F280E14C0005A2FD9 /* Models.swift in Sources */,
 				726C6CA2280B5D08009CD42F /* ContentView.swift in Sources */,
 				726C6CBD280C11A0009CD42F /* RowViewModel.swift in Sources */,
 				726C6CAE280B627D009CD42F /* RowView.swift in Sources */,

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RowView: View {
     
-    
     var image: String, name: String, author: String, publishDate: String, publisher: String, numberOfPages: Int
   
     var body: some View {
@@ -36,6 +35,7 @@ struct RowView: View {
                     Label("Favorite", systemImage: "heart.fill")
                         .labelStyle(.iconOnly)
                         .foregroundColor(.pink_darkest_color)
+                    
                         
                 }
             }
