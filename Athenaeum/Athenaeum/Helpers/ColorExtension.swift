@@ -37,6 +37,7 @@ extension Color {
     static let text_color = Color(UIColor(red: 41/255, green: 4/255, blue: 0/255, alpha: 0.8))
     
     static let red_color = Color(UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 1.0))
+    static let red_primary_color = Color(UIColor(red: 229/255, green: 63/255, blue: 123/255, alpha: 1.0))
     static let blue_color = Color(UIColor(red: 0/255, green: 106/255, blue: 246/255, alpha: 1.0))
     
     static let red_color_trans = Color(UIColor(red: 235/255, green: 87/255, blue: 87/255, alpha: 0.1))
