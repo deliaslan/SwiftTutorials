@@ -40,7 +40,8 @@ struct HomeView: View {
             } //Scroll end
             .navigationBarHidden(true)
         }
-    }.navigationViewStyle(StackNavigationViewStyle())
+    }
+//        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

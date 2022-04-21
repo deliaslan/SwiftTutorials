@@ -20,9 +20,9 @@ struct WellcomeScreenView: View {
                         .frame(maxWidth: .infinity, maxHeight: 300)
                     Spacer()
                     PrimaryButton(title: "Buradan Başlayın")
-                    NavigationLink(destination: SignInScreenView()) { // .navigationBarHidden(true)
+                    NavigationLink(destination: SignInScreenView().navigationBarHidden(true)) { // .navigationBarHidden(true)
                         SignInButton(title: "Giriş Yap")
-                    }  //.navigationBarHidden(true)
+                    }//.navigationBarHidden(true)
                     HStack {
                         Text("Buralarda yeni misin?")
                             .bold()
