@@ -18,3 +18,6 @@ struct BookData {
         BookModel(id: 6, name: "Levent Kapadokya'da", author: "Mustafa Orakçı", illustrator: "Derya Işık Özbay", publisher: "Timaş Çocuk", publishDate: "2019", numberOfPages: 96, coverImage: "levent_kapadokyada", bookSaver: owner1),
         BookModel(id: 7, name: "Levent Kapadokya'da", author: "Mustafa Orakçı", illustrator: "Derya Işık Özbay", publisher: "Timaş Çocuk", publishDate: "2019", numberOfPages: 96, coverImage: "levent_kapadokyada", bookSaver: owner1),]
 }
+
+
+
