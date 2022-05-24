@@ -85,7 +85,7 @@ struct DetailsView: View {
                                             .foregroundColor(Color.white_color)
                                         Spacer()
                                     }
-                                    DetailsOwnerView(image: viewModel.model.bookSaver.image, name: viewModel.model.bookSaver.name, bio: viewModel.model.bookSaver.bio, messageMethod: viewModel.messageMethod)
+//                                    DetailsOwnerView(image: viewModel.model.bookSaver.image, name: viewModel.model.bookSaver.name, bio: viewModel.model.bookSaver.bio, messageMethod: viewModel.messageMethod)
                                 }.padding(.vertical, 16)
                                 
                                 Button(action: { viewModel.adoptMethod() },

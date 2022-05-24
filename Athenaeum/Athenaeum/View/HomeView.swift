@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var viewModel = RowViewModel()
+    @State private var showPopup = false
 
     var body: some View {
         NavigationView {
@@ -38,7 +39,7 @@ struct HomeView: View {
                         }.padding(.leading, 10).padding(.trailing, 10)
                 }
             } //Scroll end
-            .navigationBarHidden(true)
+            .navigationBarHidden(false) //true 19.5.2022
         }
     }
 //        .navigationViewStyle(StackNavigationViewStyle())

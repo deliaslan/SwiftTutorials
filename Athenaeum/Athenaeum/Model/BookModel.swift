@@ -8,7 +8,7 @@
 import Foundation
 
 struct BookModel: Identifiable{
-    var id: Int
+    var id: String
     var name: String
     var author: String
     var illustrator: String
@@ -16,5 +16,5 @@ struct BookModel: Identifiable{
     var publishDate: String
     var numberOfPages: Int
     var coverImage: String
-    var bookSaver: UserModel
+  //  var bookSaver: UserModel
 }
