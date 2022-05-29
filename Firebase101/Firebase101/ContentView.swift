@@ -6,8 +6,16 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ContentView: View {
+    
+    private var db: Firestore
+    
+    init() {
+        db = Firestore.firestore()
+    }
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
