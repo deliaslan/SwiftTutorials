@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1D3A5F0F5C15B2425B5FBEAE /* Pods_Firebase101.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7779D80E16D32C98076462 /* Pods_Firebase101.framework */; };
+		72095158284350090092EF15 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72095157284350090092EF15 /* Task.swift */; };
+		7209515B284555D30092EF15 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7209515A284555D30092EF15 /* ViewModel.swift */; };
 		72774D3F2842AA8F000FE08C /* Firebase101App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72774D3E2842AA8F000FE08C /* Firebase101App.swift */; };
 		72774D412842AA8F000FE08C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72774D402842AA8F000FE08C /* ContentView.swift */; };
 		72774D432842AA91000FE08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72774D422842AA91000FE08C /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		5593FB2D754642E5AE9D7AAD /* Pods-Firebase101.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase101.debug.xcconfig"; path = "Target Support Files/Pods-Firebase101/Pods-Firebase101.debug.xcconfig"; sourceTree = "<group>"; };
+		72095157284350090092EF15 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		7209515A284555D30092EF15 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		72774D3B2842AA8F000FE08C /* Firebase101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firebase101.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72774D3E2842AA8F000FE08C /* Firebase101App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase101App.swift; sourceTree = "<group>"; };
 		72774D402842AA8F000FE08C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7209515628434FF50092EF15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72095157284350090092EF15 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72095159284555B10092EF15 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7209515A284555D30092EF15 /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		72774D322842AA8F000FE08C = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +80,8 @@
 		72774D3D2842AA8F000FE08C /* Firebase101 */ = {
 			isa = PBXGroup;
 			children = (
+				72095159284555B10092EF15 /* ViewModels */,
+				7209515628434FF50092EF15 /* Models */,
 				72774D3E2842AA8F000FE08C /* Firebase101App.swift */,
 				72774D402842AA8F000FE08C /* ContentView.swift */,
 				72774D422842AA91000FE08C /* Assets.xcassets */,
@@ -91,7 +113,6 @@
 				5593FB2D754642E5AE9D7AAD /* Pods-Firebase101.debug.xcconfig */,
 				79D11D627EFF8589433C3C00 /* Pods-Firebase101.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -211,6 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				72774D412842AA8F000FE08C /* ContentView.swift in Sources */,
+				72095158284350090092EF15 /* Task.swift in Sources */,
+				7209515B284555D30092EF15 /* ViewModel.swift in Sources */,
 				72774D3F2842AA8F000FE08C /* Firebase101App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
