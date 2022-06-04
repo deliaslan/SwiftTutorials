@@ -11,6 +11,12 @@
 		72A5CE28284BC894007A7943 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE27284BC894007A7943 /* ContentView.swift */; };
 		72A5CE2A284BC895007A7943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A5CE29284BC895007A7943 /* Assets.xcassets */; };
 		72A5CE2D284BC895007A7943 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A5CE2C284BC895007A7943 /* Preview Assets.xcassets */; };
+		72A5CE34284BCF57007A7943 /* BirinciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE33284BCF57007A7943 /* BirinciView.swift */; };
+		72A5CE36284BCF63007A7943 /* IkinciView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE35284BCF63007A7943 /* IkinciView.swift */; };
+		72A5CE38284BDAEF007A7943 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE37284BDAEF007A7943 /* Model.swift */; };
+		72A5CE3A284BDBE1007A7943 /* YapilacakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE39284BDBE1007A7943 /* YapilacakView.swift */; };
+		72A5CE3C284BE2A0007A7943 /* DetayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE3B284BE2A0007A7943 /* DetayView.swift */; };
+		72A5CE3E284BEF1B007A7943 /* YapildiButonu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A5CE3D284BEF1B007A7943 /* YapildiButonu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		72A5CE27284BC894007A7943 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		72A5CE29284BC895007A7943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72A5CE2C284BC895007A7943 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72A5CE33284BCF57007A7943 /* BirinciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirinciView.swift; sourceTree = "<group>"; };
+		72A5CE35284BCF63007A7943 /* IkinciView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IkinciView.swift; sourceTree = "<group>"; };
+		72A5CE37284BDAEF007A7943 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		72A5CE39284BDBE1007A7943 /* YapilacakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapilacakView.swift; sourceTree = "<group>"; };
+		72A5CE3B284BE2A0007A7943 /* DetayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetayView.swift; sourceTree = "<group>"; };
+		72A5CE3D284BEF1B007A7943 /* YapildiButonu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YapildiButonu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,12 @@
 				72A5CE27284BC894007A7943 /* ContentView.swift */,
 				72A5CE29284BC895007A7943 /* Assets.xcassets */,
 				72A5CE2B284BC895007A7943 /* Preview Content */,
+				72A5CE33284BCF57007A7943 /* BirinciView.swift */,
+				72A5CE35284BCF63007A7943 /* IkinciView.swift */,
+				72A5CE37284BDAEF007A7943 /* Model.swift */,
+				72A5CE39284BDBE1007A7943 /* YapilacakView.swift */,
+				72A5CE3B284BE2A0007A7943 /* DetayView.swift */,
+				72A5CE3D284BEF1B007A7943 /* YapildiButonu.swift */,
 			);
 			path = VeriIslemleri;
 			sourceTree = "<group>";
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A5CE38284BDAEF007A7943 /* Model.swift in Sources */,
 				72A5CE28284BC894007A7943 /* ContentView.swift in Sources */,
+				72A5CE3A284BDBE1007A7943 /* YapilacakView.swift in Sources */,
+				72A5CE36284BCF63007A7943 /* IkinciView.swift in Sources */,
 				72A5CE26284BC894007A7943 /* VeriIslemleriApp.swift in Sources */,
+				72A5CE3C284BE2A0007A7943 /* DetayView.swift in Sources */,
+				72A5CE34284BCF57007A7943 /* BirinciView.swift in Sources */,
+				72A5CE3E284BEF1B007A7943 /* YapildiButonu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
