@@ -50,8 +50,8 @@ class ViewModel: ObservableObject {
                                         donanimAriza: doc["sinifAdi"] as? String ?? "",
                                         digerAriza: doc["sinifAdi"] as? String ?? "",
                                         name: doc["name"] as? String ?? "",
-                                        surname: doc["surname"] as? String ?? "")
-                        }
+                                        surname: doc["surname"] as? String ?? ""
+                        )}
                     }
                 }
             } else {
@@ -89,7 +89,13 @@ class ViewModel: ObservableObject {
         //get a reference to the database
         let db = Firestore.firestore()
         //set the data to update
-        db.collection("tasks").document(taskToUpdate.id).setData(["name": "up \(taskToUpdate.name)", "surname": "up: \(taskToUpdate.surname)"], merge: true) { error in
+        db.collection("tasks").document(taskToUpdate.id).setData(["name": taskToUpdate.name ,
+                                                                  "surname": taskToUpdate.surname,
+                                                                  "sinifAdi": taskToUpdate.sinifAdi,
+                                                                  "yazilimAriza": taskToUpdate.yazilimAriza ?? "",
+                                                                  "donanimAriza": taskToUpdate.donanimAriza ?? "",
+                                                                  "digerAriza": taskToUpdate.digerAriza ?? ""],
+                                                                 merge: true) { error in
             //check for errors
             if error == nil {
                 //get the new data

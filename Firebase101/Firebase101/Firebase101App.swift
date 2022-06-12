@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
+
+
 
 @main
 struct Firebase101App: App {
